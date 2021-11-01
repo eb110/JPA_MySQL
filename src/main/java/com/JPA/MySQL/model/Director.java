@@ -16,13 +16,16 @@ import java.util.List;
 @ToString
 @Entity
 public class Director {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String name;
     private String surname;
     private String nationality;
     private Date dob;
+
     @OneToMany(targetEntity = Film.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idDirector", referencedColumnName = "id")
     private List<Director> directors;

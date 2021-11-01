@@ -5,8 +5,6 @@ import com.JPA.MySQL.repository.DirectorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class DirectorServiceImpl implements DirectorService {
 
@@ -19,7 +17,7 @@ public class DirectorServiceImpl implements DirectorService {
     }
 
     @Override
-    public List<Director> getAllDirectors() {
+    public Iterable<Director> getAllDirectors() {
         return directorRepository.findAll();
     }
 }

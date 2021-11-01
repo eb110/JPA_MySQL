@@ -1,7 +1,7 @@
 package com.JPA.MySQL.repository;
 
 import com.JPA.MySQL.model.Film;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface FilmRepository extends JpaRepository<Film, Integer> {
+public interface FilmRepository extends CrudRepository<Film, Integer> {
 }
