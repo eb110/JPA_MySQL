@@ -15,8 +15,9 @@ import javax.persistence.*;
 public class Film {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String title;
+    private int idDirector;
 }

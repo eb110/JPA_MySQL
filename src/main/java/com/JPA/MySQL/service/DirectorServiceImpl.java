@@ -20,4 +20,16 @@ public class DirectorServiceImpl implements DirectorService {
     public Iterable<Director> getAllDirectors() {
         return directorRepository.findAll();
     }
+
+    @Override
+    public String getDirector(int id){
+        return directorRepository.findById(id).toString();
+    }
+
+    @Override
+    public void deleteDirector(int id) {
+        directorRepository.deleteById(id);
+    }
+
+
 }

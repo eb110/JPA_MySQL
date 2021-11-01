@@ -1,36 +1,38 @@
 package com.JPA.MySQL.controller;
 
 import com.JPA.MySQL.model.Director;
+import com.JPA.MySQL.model.Film;
 import com.JPA.MySQL.service.DirectorService;
+import com.JPA.MySQL.service.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/director")
-public class DirectorController {
+@RequestMapping("/film")
+public class FilmController {
     @Autowired
-    private DirectorService directorService;
+    private FilmService filmService;
 
     @PostMapping("/add")
-    private String add(@RequestBody Director director){
-        directorService.saveDirector(director);
+    private String add(@RequestBody Film film){
+        filmService.saveFilm(film);
         return "New director is added";
     }
 
     @GetMapping("/getAll")
-    public Iterable<Director> getAllDirectors(){
-        return directorService.getAllDirectors();
+    public Iterable<Film> getAllDirectors(){
+        return filmService.getAllFilms();
     }
 
     @GetMapping("/getById/{id}")
-    public String getDirector(@PathVariable("id") int id){
-        return directorService.getDirector(id);
+    public String getFilm(@PathVariable("id") int id){
+        return filmService.getFilm(id);
     }
 
     @DeleteMapping(value = "/deleteById/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable("id") int id) {
-        directorService.deleteDirector(id);
+        filmService.deleteFilm(id);
     }
 }
