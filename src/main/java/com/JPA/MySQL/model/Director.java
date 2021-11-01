@@ -6,11 +6,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -23,6 +21,8 @@ public class Director {
     private int id;
     private String name;
     private String surname;
-    private Date dob;
     private String nationality;
+    @OneToMany(targetEntity = Film.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idDirector", referencedColumnName = "id")
+    private List<Director> directors;
 }

@@ -1,8 +1,7 @@
 package com.JPA.MySQL.controller;
 
-import com.JPA.MySQL.dto.DirectorRequest;
 import com.JPA.MySQL.model.Director;
-import com.JPA.MySQL.repository.DirectorRepository;
+import com.JPA.MySQL.service.DirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,16 +11,16 @@ import java.util.List;
 @RequestMapping("/director")
 public class DirectorController {
     @Autowired
-    private DirectorRepository directorRepository;
+    private DirectorService directorService;
 
     @PostMapping("/add")
-    private String placeDirector(@RequestBody DirectorRequest request){
-        directorRepository.save(request.getDirector());
+    private String add(@RequestBody Director director){
+        directorService.saveDirector(director);
         return "New director is added";
     }
 
     @GetMapping("/getAll")
     public List<Director> getAllDirectors(){
-        return directorRepository.findAll();
+        return directorService.getAllDirectors();
     }
 }
