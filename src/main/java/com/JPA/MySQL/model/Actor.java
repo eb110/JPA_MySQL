@@ -14,22 +14,23 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Director {
+
+public class Actor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     private String name;
     private String surname;
     private String nationality;
     private Date dob;
 
-    @OneToMany(targetEntity = Film.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "idDirector", referencedColumnName = "id")
-    private List<Director> filmDirectorList;
+    @OneToMany(targetEntity = FilmActors.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idActor", referencedColumnName = "id")
+    private List<Actor> filmActorsList;
 
-    @OneToMany(targetEntity = DirectorFeedback.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "idDirector", referencedColumnName = "id")
-    private List<Director> directorFeedbackList;
+    @OneToMany(targetEntity = ActorFeedback.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idActor", referencedColumnName = "id")
+    private List<Actor> filmActorFeedbackList;
 }

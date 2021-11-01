@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -20,4 +21,12 @@ public class Film {
 
     private String title;
     private int idDirector;
+
+    @OneToMany(targetEntity = FilmFeedback.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idFilm", referencedColumnName = "id")
+    private List<Film> filmFeedbackList;
+
+    @OneToMany(targetEntity = FilmActors.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idFilm", referencedColumnName = "id")
+    private List<Film> filmActorsList;
 }
