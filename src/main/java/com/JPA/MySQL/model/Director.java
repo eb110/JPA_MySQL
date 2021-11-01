@@ -18,7 +18,7 @@ import java.util.List;
 public class Director {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String name;
     private String surname;
     private String nationality;
