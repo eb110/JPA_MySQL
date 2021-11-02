@@ -10,10 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
+
 @Entity
 public class Test {
     @Id
@@ -22,4 +19,30 @@ public class Test {
 
     private String attrib1;
     private String testfield;
+
+    public Test(){}
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getAttrib1() {
+        return attrib1;
+    }
+
+    public void setAttrib1(String attrib1) {
+        this.attrib1 = attrib1;
+    }
+
+    public String getTestfield() {
+        return testfield;
+    }
+
+    public void setTestfield(String testfield) {
+        this.testfield = testfield;
+    }
 }
