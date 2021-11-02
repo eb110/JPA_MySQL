@@ -12,7 +12,7 @@ public class ActorFeedbackServiceImpl implements ActorFeedbackService{
     ActorFeedbackRepository actorFeedbackRepository;
 
     @Override
-    public ActorFeedback saveDirector(ActorFeedback actorFeedback) {
+    public ActorFeedback saveActorFeedback(ActorFeedback actorFeedback) {
         return actorFeedbackRepository.save(actorFeedback);
     }
 
