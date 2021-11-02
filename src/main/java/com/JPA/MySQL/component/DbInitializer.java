@@ -1,13 +1,7 @@
 package com.JPA.MySQL.component;
 
-import com.JPA.MySQL.model.Actor;
-import com.JPA.MySQL.model.Director;
-import com.JPA.MySQL.model.Film;
-import com.JPA.MySQL.model.User;
-import com.JPA.MySQL.repository.ActorRepository;
-import com.JPA.MySQL.repository.DirectorRepository;
-import com.JPA.MySQL.repository.FilmRepository;
-import com.JPA.MySQL.repository.UserRepository;
+import com.JPA.MySQL.model.*;
+import com.JPA.MySQL.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -23,14 +17,24 @@ public class DbInitializer implements CommandLineRunner {
     private DirectorRepository directorRepository;
     private UserRepository userRepository;
     private FilmRepository filmRepository;
+    private FilmActorsRepository filmActorsRepository;
+    private ActorFeedbackRepository actorFeedbackRepository;
+    private DirectorFeedbackRepository directorFeedbackRepository;
+    private FilmFeedbackRepository filmFeedbackRepository;
+
     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 
     public DbInitializer(ActorRepository actorRepository, DirectorRepository directorRepository, UserRepository userRepository,
-                         FilmRepository filmRepository){
+                         FilmRepository filmRepository, FilmActorsRepository filmActorsRepository, FilmFeedbackRepository filmFeedbackRepository,
+                         ActorFeedbackRepository actorFeedbackRepository, DirectorFeedbackRepository directorFeedbackRepository){
         this.actorRepository = actorRepository;
         this.directorRepository = directorRepository;
         this.userRepository = userRepository;
         this.filmRepository = filmRepository;
+        this.filmActorsRepository = filmActorsRepository;
+        this.actorFeedbackRepository = actorFeedbackRepository;
+        this.directorFeedbackRepository = directorFeedbackRepository;
+        this.filmFeedbackRepository = filmFeedbackRepository;
     }
 
     @Override
@@ -39,6 +43,46 @@ public class DbInitializer implements CommandLineRunner {
         directorSeed();
         userSeed();
         filmSeed();
+        filmActorsSeed();
+        actorFeedbackSeed();
+        directorFeedbackSeed();
+        filmFeedbackSeed();
+    }
+
+    private void filmFeedbackSeed() {
+        String[] feedbacks = {"This film is great", "Top 5 on the whole world", "I like it", "I love to watch it", "Best film ever"};
+        for(int i = 0; i < 5; i++){
+            FilmFeedback filmFeedback = new FilmFeedback();
+            filmFeedback.setIdUser(i+1);
+            filmFeedback.setIdFilm(5-i);
+            filmFeedback.setFeedback(feedbacks[i]);
+            filmFeedbackRepository.save(filmFeedback);
+        }
+        System.out.println("Film feedbacks seeded!");
+    }
+
+    private void directorFeedbackSeed() {
+        String[] feedbacks = {"This director is such a nice person", "Top 5 on the whole world", "I like it", "I love to watch his movies", "Best director ever"};
+        for(int i = 0; i < 5; i++){
+            DirectorFeedback directorFeedback = new DirectorFeedback();
+            directorFeedback.setIdUser(i+1);
+            directorFeedback.setIdDirector(5-i);
+            directorFeedback.setFeedback(feedbacks[i]);
+            directorFeedbackRepository.save(directorFeedback);
+        }
+        System.out.println("Director feedbacks seeded!");
+    }
+
+    private void actorFeedbackSeed() {
+        String[] feedbacks = {"This actor is such a nice person", "Top 5 on the whole world", "I like it", "I love to watch him", "Best actor ever"};
+        for(int i = 0; i < 5; i++){
+            ActorFeedback actorFeedback = new ActorFeedback();
+            actorFeedback.setIdUser(i+1);
+            actorFeedback.setIdActor(5-i);
+            actorFeedback.setFeedback(feedbacks[i]);
+            actorFeedbackRepository.save(actorFeedback);
+        }
+        System.out.println("Actor feedbacks seeded!");
     }
 
     private void actorSeed(){
@@ -105,5 +149,16 @@ public class DbInitializer implements CommandLineRunner {
             filmRepository.save(film);
         }
         System.out.println("Films have been seeded");
+    }
+
+    private void filmActorsSeed(){
+
+        for(int i = 0; i < 5; i++) {
+            FilmActors filmActors = new FilmActors();
+            filmActors.setIdFilm(i + 1);
+            filmActors.setIdActor(5 - i);
+            filmActorsRepository.save(filmActors);
+        }
+        System.out.println("Film actors have been seeded");
     }
 }
