@@ -28,7 +28,6 @@ public class TestServiceImpl implements TestService{
 
     @Override
     public void deleteTest(int id) {
-
         testRepository.deleteById(id);
     }
 }
