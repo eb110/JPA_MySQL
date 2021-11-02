@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class DirectorFeedback {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private int idUser;

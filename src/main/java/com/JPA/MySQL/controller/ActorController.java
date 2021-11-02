@@ -4,6 +4,7 @@ import com.JPA.MySQL.model.Actor;
 import com.JPA.MySQL.service.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -13,9 +14,8 @@ public class ActorController {
     private ActorService actorService;
 
     @PostMapping("/add")
-    private String add(@RequestBody Actor actor){
-        actorService.saveActor(actor);
-        return "New actor is added";
+    public ResponseEntity<Actor> add(@RequestBody Actor actor){
+        return new ResponseEntity<>(actorService.saveActor(actor), HttpStatus.CREATED);
     }
 
     @GetMapping("/getAll")
