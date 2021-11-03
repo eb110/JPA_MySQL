@@ -19,8 +19,8 @@ public class ActorController {
     }
 
     @GetMapping("/getAll")
-    public Iterable<Actor> getAllActor(){
-        return actorService.getAllActors();
+    public ResponseEntity<Iterable<Actor>> getAllActor(){
+        return new ResponseEntity<>(actorService.getAllActors(), HttpStatus.OK);
     }
 
     @GetMapping("/getById/{id}")

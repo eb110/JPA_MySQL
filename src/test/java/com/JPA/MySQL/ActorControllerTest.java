@@ -77,4 +77,12 @@ public class ActorControllerTest {
                         .andExpect(status().isOk());
     }
 
+    @Test
+    public void getAllActors() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders
+                        .get("/actor/getAll")
+                        .contentType(MediaType.APPLICATION_JSON))
+                        .andExpect(status().isOk());
+    }
+
 }
