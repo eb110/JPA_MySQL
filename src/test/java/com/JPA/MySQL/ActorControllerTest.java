@@ -39,13 +39,18 @@ public class ActorControllerTest {
         actor.setName("zenek");
         actor.setSurname("stanik");
         actor.setNationality("polish");
+
             when(actorService.saveActor(any(Actor.class))).thenReturn(actor);
 
             mockMvc.perform(MockMvcRequestBuilders.post("/actor/add")
                     .content(new ObjectMapper().writeValueAsString(actor))
-                    .contentType(MediaType.APPLICATION_JSON)).andExpect(status().isCreated());
+                    .contentType(MediaType.APPLICATION_JSON))
+                    .andExpect(status().isCreated())
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.id").exists())
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.surname").value("stanik"))
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.nationality").value("polish"))
+                    .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("zenek"));
         }
-
 
     @Test
     public void getActorById() throws Exception {
@@ -62,6 +67,14 @@ public class ActorControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.surname").value("Plech"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.nationality").value("Polish"))
                 .andExpect(status().isOk());
+    }
+
+    @Test
+    public void actorDeleteById() throws Exception {
+        this.mockMvc.perform(MockMvcRequestBuilders
+                        .delete("/actor/deleteById/{id}", "11")
+                        .contentType(MediaType.APPLICATION_JSON))
+                        .andExpect(status().isOk());
     }
 
 }
