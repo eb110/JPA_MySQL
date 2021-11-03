@@ -32,6 +32,14 @@ public class Actor {
     private String nationality;
     private Timestamp dob;
 
+    public Actor(int id, String name, String surname, String nationality, Timestamp dob){
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.nationality = nationality;
+        this.dob = dob;
+    }
+
     @OneToMany(targetEntity = FilmActors.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idActor", referencedColumnName = "id")
     private List<Actor> filmActorsList;
