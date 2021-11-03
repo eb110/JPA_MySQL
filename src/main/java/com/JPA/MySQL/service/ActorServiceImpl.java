@@ -3,9 +3,9 @@ package com.JPA.MySQL.service;
 import com.JPA.MySQL.model.Actor;
 import com.JPA.MySQL.repository.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.event.ContextRefreshedEvent;
-import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class ActorServiceImpl implements ActorService{
@@ -24,8 +24,8 @@ public class ActorServiceImpl implements ActorService{
     }
 
     @Override
-    public String getActor(int id) {
-        return actorRepository.findById(id).toString();
+    public Actor getActor(int id) {
+        return actorRepository.findById(id).orElse(null);
     }
 
     @Override

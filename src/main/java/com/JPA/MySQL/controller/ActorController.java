@@ -24,8 +24,8 @@ public class ActorController {
     }
 
     @GetMapping("/getById/{id}")
-    public String getActor(@PathVariable("id") int id){
-        return actorService.getActor(id);
+    public ResponseEntity<Actor> getActor(@PathVariable("id") int id){
+        return new ResponseEntity<>(actorService.getActor(id), HttpStatus.OK);
     }
 
     @DeleteMapping(value = "/deleteById/{id}")

@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -32,24 +33,35 @@ public class ActorControllerTest {
     private ActorService actorService;
 
     @Test
-    public void getActorByIdTest() throws Exception{
+    public void postActor() throws Exception{
 
-        String[] names = {"Zenon", "Romek", "Janek", "Stefan", "Enrike"};
-        String[] surname = {"Plech", "Jankowski", "Kmiecik", "Kulczak", "Wazowsky"};
         Actor actor = new Actor();
-        for(int i = 0; i < 1; i++) {
-            actor = new Actor();
-            actor.setName(names[i]);
-            actor.setSurname(surname[i]);
-
+        actor.setName("zenek");
+        actor.setSurname("stanik");
+        actor.setNationality("polish");
             when(actorService.saveActor(any(Actor.class))).thenReturn(actor);
 
             mockMvc.perform(MockMvcRequestBuilders.post("/actor/add")
                     .content(new ObjectMapper().writeValueAsString(actor))
                     .contentType(MediaType.APPLICATION_JSON)).andExpect(status().isCreated());
         }
-      //  when(actorService.getActor(anyInt())).thenReturn(actor.toString());
-      //  mockMvc.perform(MockMvcRequestBuilders.get("/actor/getById/2")).
-            //    andExpect(status().isOk());
+
+
+    @Test
+    public void getActorById() throws Exception {
+
+        Actor actor = new Actor();
+        actor.setName("Zenon");
+        actor.setSurname("Plech");
+        actor.setNationality("Polish");
+
+        when(actorService.getActor(anyInt())).thenReturn(actor);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/actor/getById/1"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.name").value("Zenon"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.surname").value("Plech"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.nationality").value("Polish"))
+                .andExpect(status().isOk());
     }
+
 }
