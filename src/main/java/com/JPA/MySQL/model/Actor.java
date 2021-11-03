@@ -1,11 +1,17 @@
 package com.JPA.MySQL.model;
 
+import com.JPA.MySQL.repository.ActorRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.context.event.EventListener;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 
@@ -18,13 +24,13 @@ import java.util.List;
 public class Actor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
     private String surname;
     private String nationality;
-    private Date dob;
+    private Timestamp dob;
 
     @OneToMany(targetEntity = FilmActors.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idActor", referencedColumnName = "id")
@@ -33,4 +39,5 @@ public class Actor {
     @OneToMany(targetEntity = ActorFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idActor", referencedColumnName = "id")
     private List<Actor> filmActorFeedbackList;
+
 }
