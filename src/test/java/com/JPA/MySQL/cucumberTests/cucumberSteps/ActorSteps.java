@@ -2,13 +2,16 @@ package com.JPA.MySQL.cucumberTests.cucumberSteps;
 
 import com.JPA.MySQL.model.Actor;
 import com.JPA.MySQL.service.ActorServiceImpl;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SpringBootTest
 public class ActorSteps {
 
     @Autowired
@@ -37,7 +40,6 @@ public class ActorSteps {
             assertEquals(tempName, name, "The name is not correct");
         }
 
-        /*
     @Given("I have a film id {int}")
     public void i_have_a_film_id(Integer int1) {
         actorId = int1;
@@ -53,6 +55,6 @@ public class ActorSteps {
     public void i_receive_a(String string) {
        assertEquals(string, name);
     }
-    */
+
 
 }
