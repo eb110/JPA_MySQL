@@ -5,7 +5,7 @@ Feature: Testing the actor
     When I receive the actors name
     Then The confirmation should be positive
 
-  Scenario: Test getById get request
-    Given I have a film id 1
-    When i want to check the name
-    Then I receive a "Zenek"
+  #Scenario: Test getById get request
+ #   Given I have a film id 1
+ #   When i want to check the name
+ #   Then I receive a "Zenek"
