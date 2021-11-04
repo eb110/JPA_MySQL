@@ -38,6 +38,7 @@ public class ActorSteps {
             assertEquals(tempName, name, "The name is not correct");
         }
 
+        /*
     @Given("I have a film id {int}")
     public void i_have_a_film_id(Integer int1) {
         actorId = int1;
@@ -53,4 +54,6 @@ public class ActorSteps {
     public void i_receive_a(String string) {
        assertEquals(string, name);
     }
+    */
+
 }
