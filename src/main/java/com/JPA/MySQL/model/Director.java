@@ -25,6 +25,12 @@ public class Director {
     private String nationality;
     private Date dob;
 
+    public Director (String name, String surname, String nationality){
+        this.name = name;
+        this.surname = surname;
+        this.nationality = nationality;
+    }
+
     @OneToMany(targetEntity = Film.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idDirector", referencedColumnName = "id")
     private List<Director> filmDirectorList;

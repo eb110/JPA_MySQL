@@ -11,6 +11,6 @@ import org.junit.runner.RunWith;
         glue = {"com.JPA.MySQL.cucumberTests.cucumberSteps"}
 )
 
-public class actorRunner {
+public class ActorRunner {
 
 }
