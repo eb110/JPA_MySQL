@@ -3,9 +3,11 @@ package com.JPA.MySQL.cucumberTests.cucumberRunners;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(Cucumber.class)
+
+@RunWith( SpringRunner.class )
 @CucumberOptions(
         features = "src/test/resources/cucumberFeatures/actor.feature",
         glue = {"com.JPA.MySQL.cucumberTests.cucumberSteps"}
