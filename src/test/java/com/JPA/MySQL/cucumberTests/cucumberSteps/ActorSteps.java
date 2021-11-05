@@ -2,7 +2,6 @@ package com.JPA.MySQL.cucumberTests.cucumberSteps;
 
 import com.JPA.MySQL.model.Actor;
 import com.JPA.MySQL.service.ActorServiceImpl;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
