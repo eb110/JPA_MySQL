@@ -7,6 +7,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class DirectorSteps {
@@ -16,6 +19,7 @@ public class DirectorSteps {
 
     int directorId;
     String directorName;
+    List<Director> directorList;
 
     @Given("Director id {int}")
     public void director_id(Integer int1) {
@@ -29,5 +33,22 @@ public class DirectorSteps {
     @Then("Director name is  {string}")
     public void director_name_is(String string) {
         assertEquals(string, string);
+    }
+
+    @Given("the list of directors")
+    public void the_list_of_directors() {
+        directorList = new ArrayList<>();
+    }
+    @When("i get all directors")
+    public void i_get_all_directors() {
+        var tempList = directorService.getAllDirectors();
+        for (Director ele:tempList) {
+            directorList.add(ele);
+        }
+    }
+    @Then("Directors total number is {int}")
+    public void directors_total_number_is(Integer int1) {
+        Integer numberOfElements = directorList.size();
+        assertEquals(int1, numberOfElements);
     }
 }
