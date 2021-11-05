@@ -52,11 +52,11 @@ public class DbInitializer implements CommandLineRunner {
     private void filmFeedbackSeed() {
         String[] feedbacks = {"This film is great", "Top 5 on the whole world", "I like it", "I love to watch it", "Best film ever"};
         for(int i = 0; i < 5; i++){
-            FilmFeedback filmFeedback = new FilmFeedback();
-            filmFeedback.setIdUser(i+1);
-            filmFeedback.setIdFilm(5-i);
-            filmFeedback.setFeedback(feedbacks[i]);
-            filmFeedbackRepository.save(filmFeedback);
+            VladFilmFeedback vladFilmFeedback = new VladFilmFeedback();
+            vladFilmFeedback.setIdUser(i+1);
+            vladFilmFeedback.setIdFilm(5-i);
+            vladFilmFeedback.setFeedback(feedbacks[i]);
+            filmFeedbackRepository.save(vladFilmFeedback);
         }
         System.out.println("Film feedbacks seeded!");
     }
@@ -64,11 +64,11 @@ public class DbInitializer implements CommandLineRunner {
     private void directorFeedbackSeed() {
         String[] feedbacks = {"This director is such a nice person", "Top 5 on the whole world", "I like it", "I love to watch his movies", "Best director ever"};
         for(int i = 0; i < 5; i++){
-            DirectorFeedback directorFeedback = new DirectorFeedback();
-            directorFeedback.setIdUser(i+1);
-            directorFeedback.setIdDirector(5-i);
-            directorFeedback.setFeedback(feedbacks[i]);
-            directorFeedbackRepository.save(directorFeedback);
+            VladDirectorFeedback vladDirectorFeedback = new VladDirectorFeedback();
+            vladDirectorFeedback.setIdUser(i+1);
+            vladDirectorFeedback.setIdDirector(5-i);
+            vladDirectorFeedback.setFeedback(feedbacks[i]);
+            directorFeedbackRepository.save(vladDirectorFeedback);
         }
         System.out.println("Director feedbacks seeded!");
     }
@@ -76,7 +76,7 @@ public class DbInitializer implements CommandLineRunner {
     private void actorFeedbackSeed() {
         String[] feedbacks = {"This actor is such a nice person", "Top 5 on the whole world", "I like it", "I love to watch him", "Best actor ever"};
         for(int i = 0; i < 5; i++){
-            ActorFeedback actorFeedback = new ActorFeedback();
+            VladActorFeedback actorFeedback = new VladActorFeedback();
             actorFeedback.setIdUser(i+1);
             actorFeedback.setIdActor(5-i);
             actorFeedback.setFeedback(feedbacks[i]);
@@ -91,7 +91,7 @@ public class DbInitializer implements CommandLineRunner {
         String[] nation = {"Polish", "Romanian", "Scottish", "Welsh", "French"};
         String[] dobs = {"1996/06/17", "1956/07/27", "1945/11/11", "1959/02/10", "1965/12/23"};
         for(int i = 0; i < 5; i++) {
-            Actor actor = new Actor();
+            VladActor actor = new VladActor();
             actor.setName(names[i]);
             actor.setSurname(surname[i]);
             Date date = new Date();
@@ -111,16 +111,16 @@ public class DbInitializer implements CommandLineRunner {
         String[] nation = {"Polish", "Romanian", "Scottish", "Welsh", "French"};
         String[] dobs = {"1996/06/17", "1956/07/27", "1945/11/11", "1959/02/10", "1965/12/23"};
         for(int i = 0; i < 5; i++) {
-            Director director = new Director();
-            director.setName(names[i]);
-            director.setSurname(surname[i]);
+            VladDirector vladDirector = new VladDirector();
+            vladDirector.setName(names[i]);
+            vladDirector.setSurname(surname[i]);
             Date date = new Date();
             try{
                 date = dateFormat.parse(dobs[i]);
             }catch (Exception e){}
-            director.setDob(new Timestamp(date.getTime()));
-            director.setNationality(nation[i]);
-            directorRepository.save(director);
+            vladDirector.setDob(new Timestamp(date.getTime()));
+            vladDirector.setNationality(nation[i]);
+            directorRepository.save(vladDirector);
         }
         System.out.println("Directors have been seeded");
     }
@@ -130,7 +130,7 @@ public class DbInitializer implements CommandLineRunner {
         String[] email = {"Scottish@co.uk", "wfigura@op.pl", "Scottish@yahoo.com", "Romanian@co.uk", "Scottish@wp.pl"};
         String[] pswrd = {"2000/06/17", "1978/07/17", "1983/11/11", "2000/02/10", "2000/12/23"};
         for(int i = 0; i < 5; i++) {
-            User user = new User();
+            VladUser user = new VladUser();
             user.setName(names[i]);
             user.setSurname(surname[i]);
             user.setEmail(email[i]);
@@ -143,10 +143,10 @@ public class DbInitializer implements CommandLineRunner {
         String[] title = {"KyleTitle", "eb110Title", "GarethTitle", "AndreaTitle", "LaurenTitle"};
 
         for(int i = 0; i < 5; i++) {
-            Film film = new Film();
-            film.setTitle(title[i]);
-            film.setIdDirector(i + 1);
-            filmRepository.save(film);
+            VladFilm vladFilm = new VladFilm();
+            vladFilm.setTitle(title[i]);
+            vladFilm.setIdDirector(i + 1);
+            filmRepository.save(vladFilm);
         }
         System.out.println("Films have been seeded");
     }
@@ -154,10 +154,10 @@ public class DbInitializer implements CommandLineRunner {
     private void filmActorsSeed(){
 
         for(int i = 0; i < 5; i++) {
-            FilmActors filmActors = new FilmActors();
-            filmActors.setIdFilm(i + 1);
-            filmActors.setIdActor(5 - i);
-            filmActorsRepository.save(filmActors);
+            VladFilmActors vladFilmActors = new VladFilmActors();
+            vladFilmActors.setIdFilm(i + 1);
+            vladFilmActors.setIdActor(5 - i);
+            filmActorsRepository.save(vladFilmActors);
         }
         System.out.println("Film actors have been seeded");
     }

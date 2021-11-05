@@ -1,6 +1,6 @@
 package com.JPA.MySQL.service;
 
-import com.JPA.MySQL.model.DirectorFeedback;
+import com.JPA.MySQL.model.VladDirectorFeedback;
 import com.JPA.MySQL.repository.DirectorFeedbackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,12 +12,12 @@ public class DirectorFeedbackServiceImpl implements DirectorFeedbackService {
     DirectorFeedbackRepository directorFeedbackRepository;
 
     @Override
-    public DirectorFeedback saveDirectorFeedback(DirectorFeedback directorFeedback) {
-        return directorFeedbackRepository.save(directorFeedback);
+    public VladDirectorFeedback saveDirectorFeedback(VladDirectorFeedback vladDirectorFeedback) {
+        return directorFeedbackRepository.save(vladDirectorFeedback);
     }
 
     @Override
-    public Iterable<DirectorFeedback> getAllDirectorFeedbacks() {
+    public Iterable<VladDirectorFeedback> getAllDirectorFeedbacks() {
         return directorFeedbackRepository.findAll();
     }
 

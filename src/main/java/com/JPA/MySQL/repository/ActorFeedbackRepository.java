@@ -1,7 +1,7 @@
 package com.JPA.MySQL.repository;
 
-import com.JPA.MySQL.model.ActorFeedback;
+import com.JPA.MySQL.model.VladActorFeedback;
 import org.springframework.data.repository.CrudRepository;
 
-public interface ActorFeedbackRepository extends CrudRepository<ActorFeedback, Integer> {
+public interface ActorFeedbackRepository extends CrudRepository<VladActorFeedback, Integer> {
 }

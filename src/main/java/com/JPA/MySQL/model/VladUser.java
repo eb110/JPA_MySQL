@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 @Entity
-public class User {
+public class VladUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -23,15 +23,15 @@ public class User {
     private String email;
     private String encryptedPassword;
 
-    @OneToMany(targetEntity = FilmFeedback.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = VladFilmFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idUser", referencedColumnName = "id")
-    private List<User> filmFeedbackList;
+    private List<VladUser> filmFeedbackList;
 
-    @OneToMany(targetEntity = DirectorFeedback.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = VladDirectorFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idUser", referencedColumnName = "id")
-    private List<User> directorFeedbackList;
+    private List<VladUser> directorFeedbackList;
 
-    @OneToMany(targetEntity = ActorFeedback.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = VladActorFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idUser", referencedColumnName = "id")
-    private List<User> actorFeedbackList;
+    private List<VladUser> actorFeedbackList;
 }

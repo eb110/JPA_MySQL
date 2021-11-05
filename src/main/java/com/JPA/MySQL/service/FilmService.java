@@ -1,10 +1,10 @@
 package com.JPA.MySQL.service;
 
-import com.JPA.MySQL.model.Film;
+import com.JPA.MySQL.model.VladFilm;
 
 public interface FilmService {
-    public Film saveFilm(Film film);
-    public Iterable<Film> getAllFilms();
+    public VladFilm saveFilm(VladFilm vladFilm);
+    public Iterable<VladFilm> getAllFilms();
     public String getFilm(int id);
     public void deleteFilm(int id);
 }

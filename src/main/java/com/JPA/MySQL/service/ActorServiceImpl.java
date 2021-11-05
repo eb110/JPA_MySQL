@@ -1,6 +1,6 @@
 package com.JPA.MySQL.service;
 
-import com.JPA.MySQL.model.Actor;
+import com.JPA.MySQL.model.VladActor;
 import com.JPA.MySQL.repository.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,17 +12,17 @@ public class ActorServiceImpl implements ActorService{
     ActorRepository actorRepository;
 
     @Override
-    public Actor saveActor(Actor actor) {
+    public VladActor saveActor(VladActor actor) {
         return actorRepository.save(actor);
     }
 
     @Override
-    public Iterable<Actor> getAllActors() {
+    public Iterable<VladActor> getAllActors() {
         return actorRepository.findAll();
     }
 
     @Override
-    public Actor getActor(int id) {
+    public VladActor getActor(int id) {
         return actorRepository.findById(id).orElse(null);
     }
 

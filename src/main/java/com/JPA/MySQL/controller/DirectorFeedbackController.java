@@ -1,6 +1,6 @@
 package com.JPA.MySQL.controller;
 
-import com.JPA.MySQL.model.DirectorFeedback;
+import com.JPA.MySQL.model.VladDirectorFeedback;
 import com.JPA.MySQL.service.DirectorFeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,13 +13,13 @@ public class DirectorFeedbackController {
     private DirectorFeedbackService directorFeedbackService;
 
     @PostMapping("/add")
-    private String add(@RequestBody DirectorFeedback directorFeedback){
-        directorFeedbackService.saveDirectorFeedback(directorFeedback);
+    private String add(@RequestBody VladDirectorFeedback vladDirectorFeedback){
+        directorFeedbackService.saveDirectorFeedback(vladDirectorFeedback);
         return "New director feedback is added";
     }
 
     @GetMapping("/getAll")
-    public Iterable<DirectorFeedback> getAllDirectorFeedback(){
+    public Iterable<VladDirectorFeedback> getAllDirectorFeedback(){
         return directorFeedbackService.getAllDirectorFeedbacks();
     }
 

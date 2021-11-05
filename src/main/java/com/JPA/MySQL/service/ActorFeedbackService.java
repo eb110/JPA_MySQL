@@ -1,10 +1,10 @@
 package com.JPA.MySQL.service;
 
-import com.JPA.MySQL.model.ActorFeedback;
+import com.JPA.MySQL.model.VladActorFeedback;
 
 public interface ActorFeedbackService {
-    public ActorFeedback saveActorFeedback(ActorFeedback actorFeedback);
-    public Iterable<ActorFeedback> getAllActorFeedbacks();
+    public VladActorFeedback saveActorFeedback(VladActorFeedback actorFeedback);
+    public Iterable<VladActorFeedback> getAllActorFeedbacks();
     public String getActorFeedback(int id);
     public void deleteActorFeedback(int id);
 }

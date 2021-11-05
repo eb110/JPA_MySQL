@@ -15,7 +15,7 @@ import java.util.List;
 @ToString
 @Entity
 
-public class Actor {
+public class VladActor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +26,12 @@ public class Actor {
     private String nationality;
     private Timestamp dob;
 
-    @OneToMany(targetEntity = FilmActors.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = VladFilmActors.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idActor", referencedColumnName = "id")
-    private List<Actor> filmActorsList;
+    private List<VladActor> filmActorsList;
 
-    @OneToMany(targetEntity = ActorFeedback.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = VladActorFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idActor", referencedColumnName = "id")
-    private List<Actor> filmActorFeedbackList;
+    private List<VladActor> filmActorFeedbackList;
 
 }

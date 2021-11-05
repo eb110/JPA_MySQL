@@ -1,6 +1,6 @@
 package com.JPA.MySQL.controller;
 
-import com.JPA.MySQL.model.Director;
+import com.JPA.MySQL.model.VladDirector;
 import com.JPA.MySQL.service.DirectorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,13 +13,13 @@ public class DirectorController {
     private DirectorService directorService;
 
     @PostMapping("/add")
-    private String add(@RequestBody Director director){
-        directorService.saveDirector(director);
+    private String add(@RequestBody VladDirector vladDirector){
+        directorService.saveDirector(vladDirector);
         return "New director is added";
     }
 
     @GetMapping("/getAll")
-    public Iterable<Director> getAllDirectors(){
+    public Iterable<VladDirector> getAllDirectors(){
         return directorService.getAllDirectors();
     }
 

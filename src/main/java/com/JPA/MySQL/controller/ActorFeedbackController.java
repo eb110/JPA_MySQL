@@ -1,6 +1,6 @@
 package com.JPA.MySQL.controller;
 
-import com.JPA.MySQL.model.ActorFeedback;
+import com.JPA.MySQL.model.VladActorFeedback;
 import com.JPA.MySQL.service.ActorFeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,13 +13,13 @@ public class ActorFeedbackController {
     private ActorFeedbackService actorFeedbackService;
 
     @PostMapping("/add")
-    private String add(@RequestBody ActorFeedback actorFeedback){
+    private String add(@RequestBody VladActorFeedback actorFeedback){
         actorFeedbackService.saveActorFeedback(actorFeedback);
         return "New actor feedback is added";
     }
 
     @GetMapping("/getAll")
-    public Iterable<ActorFeedback> getAllActorFeedback(){
+    public Iterable<VladActorFeedback> getAllActorFeedback(){
         return actorFeedbackService.getAllActorFeedbacks();
     }
 

@@ -1,18 +1,18 @@
 package com.JPA.MySQL.unityTests;
 
-import com.JPA.MySQL.model.Film;
+import com.JPA.MySQL.model.VladFilm;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class FilmTest {
 
-    Film film = new Film();
+    VladFilm vladFilm = new VladFilm();
 
     @Test
     void getId() {
-        film.setId(1);
-        assertEquals(1, film.getId(), "The id of the film is not correct");
+        vladFilm.setId(1);
+        assertEquals(1, vladFilm.getId(), "The id of the film is not correct");
     }
 
     @Test

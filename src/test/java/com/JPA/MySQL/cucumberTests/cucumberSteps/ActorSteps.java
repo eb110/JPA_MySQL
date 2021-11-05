@@ -1,6 +1,6 @@
 package com.JPA.MySQL.cucumberTests.cucumberSteps;
 
-import com.JPA.MySQL.model.Actor;
+import com.JPA.MySQL.model.VladActor;
 import com.JPA.MySQL.service.ActorServiceImpl;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -21,12 +21,12 @@ public class ActorSteps {
     private ActorServiceImpl actorService;
 
 
-    Actor actor;
+    VladActor actor;
     String tempName;
     String name;
-    Actor tempActor;
+    VladActor tempActor;
     int correctAttribute;
-    List<Actor> actorsList;
+    List<VladActor> actorsList;
     int numberOfActors;
 
     int actorId;
@@ -38,7 +38,7 @@ public class ActorSteps {
 
     @When("i want to check the name")
     public void i_want_to_check_the_name() {
-        Actor actor = actorService.getActor(actorId);
+        VladActor actor = actorService.getActor(actorId);
         name = actor.getName();
     }
 
@@ -52,7 +52,7 @@ public class ActorSteps {
 
     @Given("a new actor")
     public void a_new_actor() {
-        actor = new Actor();
+        actor = new VladActor();
         actor.setName("Eryk");
         actor.setSurname("Masztalerz");
         actor.setNationality("Polish");

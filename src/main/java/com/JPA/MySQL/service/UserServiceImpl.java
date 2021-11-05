@@ -1,6 +1,6 @@
 package com.JPA.MySQL.service;
 
-import com.JPA.MySQL.model.User;
+import com.JPA.MySQL.model.VladUser;
 import com.JPA.MySQL.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,12 +12,12 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepository;
 
     @Override
-    public User saveUser(User user) {
+    public VladUser saveUser(VladUser user) {
         return userRepository.save(user);
     }
 
     @Override
-    public Iterable<User> getAllUser() {
+    public Iterable<VladUser> getAllUser() {
         return userRepository.findAll();
     }
 

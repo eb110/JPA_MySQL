@@ -6,19 +6,19 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @Entity
-public class DirectorFeedback {
-
+public class VladFilmFeedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    private int idFilm;
     private int idUser;
-    private int idDirector;
     private String feedback;
 }

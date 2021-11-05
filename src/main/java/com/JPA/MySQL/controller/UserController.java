@@ -1,6 +1,6 @@
 package com.JPA.MySQL.controller;
 
-import com.JPA.MySQL.model.User;
+import com.JPA.MySQL.model.VladUser;
 import com.JPA.MySQL.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,13 +13,13 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/add")
-    private String add(@RequestBody User user){
+    private String add(@RequestBody VladUser user){
         userService.saveUser(user);
         return "New user is added";
     }
 
     @GetMapping("/getAll")
-    public Iterable<User> getAllUser(){
+    public Iterable<VladUser> getAllUser(){
         return userService.getAllUser();
     }
 

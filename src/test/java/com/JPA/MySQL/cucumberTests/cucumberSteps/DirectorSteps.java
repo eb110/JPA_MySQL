@@ -1,6 +1,6 @@
 package com.JPA.MySQL.cucumberTests.cucumberSteps;
 
-import com.JPA.MySQL.model.Director;
+import com.JPA.MySQL.model.VladDirector;
 import com.JPA.MySQL.service.DirectorServiceImpl;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,7 +19,7 @@ public class DirectorSteps {
 
     int directorId;
     String directorName;
-    List<Director> directorList;
+    List<VladDirector> vladDirectorList;
 
     @Given("Director id {int}")
     public void director_id(Integer int1) {
@@ -27,8 +27,8 @@ public class DirectorSteps {
     }
     @When("i pick its name")
     public void i_pick_its_name() {
-        Director director = new Director();
-        directorName = director.getName();
+        VladDirector vladDirector = new VladDirector();
+        directorName = vladDirector.getName();
     }
     @Then("Director name is  {string}")
     public void director_name_is(String string) {
@@ -37,18 +37,18 @@ public class DirectorSteps {
 
     @Given("the list of directors")
     public void the_list_of_directors() {
-        directorList = new ArrayList<>();
+        vladDirectorList = new ArrayList<>();
     }
     @When("i get all directors")
     public void i_get_all_directors() {
         var tempList = directorService.getAllDirectors();
-        for (Director ele:tempList) {
-            directorList.add(ele);
+        for (VladDirector ele:tempList) {
+            vladDirectorList.add(ele);
         }
     }
     @Then("Directors total number is {int}")
     public void directors_total_number_is(Integer int1) {
-        Integer numberOfElements = directorList.size();
+        Integer numberOfElements = vladDirectorList.size();
         assertEquals(int1, numberOfElements);
     }
 }

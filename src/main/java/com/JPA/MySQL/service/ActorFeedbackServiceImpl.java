@@ -1,6 +1,6 @@
 package com.JPA.MySQL.service;
 
-import com.JPA.MySQL.model.ActorFeedback;
+import com.JPA.MySQL.model.VladActorFeedback;
 import com.JPA.MySQL.repository.ActorFeedbackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,12 +12,12 @@ public class ActorFeedbackServiceImpl implements ActorFeedbackService{
     ActorFeedbackRepository actorFeedbackRepository;
 
     @Override
-    public ActorFeedback saveActorFeedback(ActorFeedback actorFeedback) {
+    public VladActorFeedback saveActorFeedback(VladActorFeedback actorFeedback) {
         return actorFeedbackRepository.save(actorFeedback);
     }
 
     @Override
-    public Iterable<ActorFeedback> getAllActorFeedbacks() {
+    public Iterable<VladActorFeedback> getAllActorFeedbacks() {
         return actorFeedbackRepository.findAll();
     }
 

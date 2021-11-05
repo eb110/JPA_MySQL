@@ -1,6 +1,6 @@
 package com.JPA.MySQL.service;
 
-import com.JPA.MySQL.model.Director;
+import com.JPA.MySQL.model.VladDirector;
 import com.JPA.MySQL.repository.DirectorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,12 +12,12 @@ public class DirectorServiceImpl implements DirectorService {
     private DirectorRepository directorRepository;
 
     @Override
-    public Director saveDirector(Director director) {
-        return directorRepository.save(director);
+    public VladDirector saveDirector(VladDirector vladDirector) {
+        return directorRepository.save(vladDirector);
     }
 
     @Override
-    public Iterable<Director> getAllDirectors() {
+    public Iterable<VladDirector> getAllDirectors() {
         return directorRepository.findAll();
     }
 

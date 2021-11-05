@@ -1,6 +1,6 @@
 package com.JPA.MySQL.controller;
 
-import com.JPA.MySQL.model.FilmActors;
+import com.JPA.MySQL.model.VladFilmActors;
 import com.JPA.MySQL.service.FilmActorsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,13 +13,13 @@ public class FilmActorsController {
     private FilmActorsService filmActorsService;
 
     @PostMapping("/add")
-    private String add(@RequestBody FilmActors filmActors){
-        filmActorsService.saveFilmActors(filmActors);
+    private String add(@RequestBody VladFilmActors vladFilmActors){
+        filmActorsService.saveFilmActors(vladFilmActors);
         return "New film actors is added";
     }
 
     @GetMapping("/getAll")
-    public Iterable<FilmActors> getAllFilmActors(){
+    public Iterable<VladFilmActors> getAllFilmActors(){
         return filmActorsService.getAllFilmActors();
     }
 

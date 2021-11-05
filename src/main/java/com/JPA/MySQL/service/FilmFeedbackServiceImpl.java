@@ -1,6 +1,6 @@
 package com.JPA.MySQL.service;
 
-import com.JPA.MySQL.model.FilmFeedback;
+import com.JPA.MySQL.model.VladFilmFeedback;
 import com.JPA.MySQL.repository.FilmFeedbackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,12 +12,12 @@ public class FilmFeedbackServiceImpl implements FilmFeedbackService{
     FilmFeedbackRepository filmFeedbackRepository;
 
     @Override
-    public FilmFeedback saveFilmFeedback(FilmFeedback filmFeedback) {
-        return filmFeedbackRepository.save(filmFeedback);
+    public VladFilmFeedback saveFilmFeedback(VladFilmFeedback vladFilmFeedback) {
+        return filmFeedbackRepository.save(vladFilmFeedback);
     }
 
     @Override
-    public Iterable<FilmFeedback> getAllFilmFeedback() {
+    public Iterable<VladFilmFeedback> getAllFilmFeedback() {
         return filmFeedbackRepository.findAll();
     }
 

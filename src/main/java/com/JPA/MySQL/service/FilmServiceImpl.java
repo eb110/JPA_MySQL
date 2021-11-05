@@ -1,6 +1,6 @@
 package com.JPA.MySQL.service;
 
-import com.JPA.MySQL.model.Film;
+import com.JPA.MySQL.model.VladFilm;
 import com.JPA.MySQL.repository.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,12 +11,12 @@ public class FilmServiceImpl implements FilmService{
     private FilmRepository filmRepository;
 
     @Override
-    public Film saveFilm(Film film) {
-        return filmRepository.save(film);
+    public VladFilm saveFilm(VladFilm vladFilm) {
+        return filmRepository.save(vladFilm);
     }
 
     @Override
-    public Iterable<Film> getAllFilms() {
+    public Iterable<VladFilm> getAllFilms() {
         return filmRepository.findAll();
     }
 

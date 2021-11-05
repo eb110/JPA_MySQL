@@ -14,7 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Director {
+public class VladDirector {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,17 +25,17 @@ public class Director {
     private String nationality;
     private Date dob;
 
-    public Director (String name, String surname, String nationality){
+    public VladDirector(String name, String surname, String nationality){
         this.name = name;
         this.surname = surname;
         this.nationality = nationality;
     }
 
-    @OneToMany(targetEntity = Film.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = VladFilm.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idDirector", referencedColumnName = "id")
-    private List<Director> filmDirectorList;
+    private List<VladDirector> filmVladDirectorList;
 
-    @OneToMany(targetEntity = DirectorFeedback.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = VladDirectorFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idDirector", referencedColumnName = "id")
-    private List<Director> directorFeedbackList;
+    private List<VladDirector> vladDirectorFeedbackList;
 }

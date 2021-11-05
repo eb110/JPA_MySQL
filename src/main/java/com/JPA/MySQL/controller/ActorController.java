@@ -1,6 +1,6 @@
 package com.JPA.MySQL.controller;
 
-import com.JPA.MySQL.model.Actor;
+import com.JPA.MySQL.model.VladActor;
 import com.JPA.MySQL.service.ActorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,17 +14,17 @@ public class ActorController {
     private ActorService actorService;
 
     @PostMapping("/add")
-    public ResponseEntity<Actor> add(@RequestBody Actor actor){
+    public ResponseEntity<VladActor> add(@RequestBody VladActor actor){
         return new ResponseEntity<>(actorService.saveActor(actor), HttpStatus.CREATED);
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<Iterable<Actor>> getAllActor(){
+    public ResponseEntity<Iterable<VladActor>> getAllActor(){
         return new ResponseEntity<>(actorService.getAllActors(), HttpStatus.OK);
     }
 
     @GetMapping("/getById/{id}")
-    public ResponseEntity<Actor> getActor(@PathVariable("id") int id){
+    public ResponseEntity<VladActor> getActor(@PathVariable("id") int id){
         return new ResponseEntity<>(actorService.getActor(id), HttpStatus.OK);
     }
 

@@ -13,7 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Film {
+public class VladFilm {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +22,11 @@ public class Film {
     private String title;
     private int idDirector;
 
-    @OneToMany(targetEntity = FilmFeedback.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = VladFilmFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idFilm", referencedColumnName = "id")
-    private List<Film> filmFeedbackList;
+    private List<VladFilm> vladFilmFeedbackList;
 
-    @OneToMany(targetEntity = FilmActors.class, cascade = CascadeType.ALL)
+    @OneToMany(targetEntity = VladFilmActors.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idFilm", referencedColumnName = "id")
-    private List<Film> filmActorsList;
+    private List<VladFilm> vladFilmActorsList;
 }
