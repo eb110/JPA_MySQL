@@ -8,4 +8,4 @@ Feature: Testing the actor
   Scenario: Test getById get request
     Given I have a film id 1
     When i want to check the name
-    Then I receive a "Zenek"
+    Then I receive a "Zenon"
