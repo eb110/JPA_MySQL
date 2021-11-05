@@ -8,6 +8,10 @@ import io.cucumber.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -16,28 +20,16 @@ public class ActorSteps {
     @Autowired
     private ActorServiceImpl actorService;
 
-    Actor actor = new Actor(1, "Zenek", "Plech", "Polish", null);
 
+    Actor actor;
     String tempName;
     String name;
+    Actor tempActor;
+    int correctAttribute;
+    List<Actor> actorsList;
+    int numberOfActors;
 
     int actorId;
-
-    @Given("{string} is a name")
-    public void is_a_name(String name){
-
-        tempName = name;
-    }
-
-    @When("I receive the actors name")
-    public void i_receive_the_actors_name(){
-        name = actor.getName();
-    }
-
-    @Then("The confirmation should be positive")
-        public void the_confirmation_should_be_positive(){
-            assertEquals(tempName, name, "The name is not correct");
-        }
 
     @Given("I have a film id {int}")
     public void i_have_a_film_id(Integer int1) {
@@ -46,7 +38,7 @@ public class ActorSteps {
 
     @When("i want to check the name")
     public void i_want_to_check_the_name() {
-        actor = actorService.getActor(actorId);
+        Actor actor = actorService.getActor(actorId);
         name = actor.getName();
     }
 
@@ -55,5 +47,76 @@ public class ActorSteps {
        assertEquals(string, name);
     }
 
+    //#########################################
+
+
+    @Given("a new actor")
+    public void a_new_actor() {
+        actor = new Actor();
+        actor.setName("Eryk");
+        actor.setSurname("Masztalerz");
+        actor.setNationality("Polish");
+        actor.setId(25);
+        actor.setDob(null);
+    }
+
+    @Given("post actor into the db")
+    public void post_actor_into_the_db() {
+        actorService.saveActor(actor);
+    }
+
+    @Given("then get the count of all actors from db")
+    public void then_get_the_count_of_all_actors_from_db() {
+        var actors = actorService.getAllActors();
+        actorsList = StreamSupport.stream(actors.spliterator(), false).collect(Collectors.toList());
+        actorId = actorsList.get(actorsList.size() - 1).getId();
+    }
+
+    @Given("get the last actor from the db")
+    public void get_the_last_actor_from_the_db() {
+        tempActor = actorService.getActor(actorId);
+    }
+
+    @When("i compare both actors")
+    public void i_compare_both_actors() {
+        correctAttribute = 0;
+        assertEquals(actor.getName(), tempActor.getName(), "Wrong actor name");
+        correctAttribute++;
+        actorId = tempActor.getId();
+        assertEquals(actor.getSurname(), tempActor.getSurname(), "Wrong surname");
+        correctAttribute++;
+        assertEquals(tempActor.getId(), actorId, "Wrong id");
+        correctAttribute++;
+        assertEquals(actor.getNationality(), tempActor.getNationality());
+        correctAttribute++;
+        if(tempActor.getDob() == null)
+            correctAttribute++;
+    }
+
+    @Then("they both are the same")
+    public void they_both_are_the_same() {
+        assertEquals(correctAttribute, 5);
+    }
+
+    //============================================================
+
+    @Given("the total number of actors")
+    public void the_total_number_of_actors() {
+        var actors = actorService.getAllActors();
+        actorsList = StreamSupport.stream(actors.spliterator(), false).collect(Collectors.toList());
+        actorId = actorsList.get(actorsList.size() - 1).getId();
+        numberOfActors = actorsList.size();
+    }
+    @When("i delete the last actor")
+    public void i_delete_the_last_actor() {
+        actorService.deleteActor(actorId);
+
+    }
+    @Then("the total number has to be less by {int}")
+    public void the_total_number_has_to_be_less_by(Integer int1) {
+        var actors = actorService.getAllActors();
+        --numberOfActors;
+        assertEquals(numberOfActors, StreamSupport.stream(actors.spliterator(), false).collect(Collectors.toList()).size());
+    }
 
 }

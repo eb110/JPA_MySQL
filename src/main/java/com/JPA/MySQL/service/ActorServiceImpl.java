@@ -31,18 +31,4 @@ public class ActorServiceImpl implements ActorService{
         actorRepository.deleteById(id);
     }
 
-
-    /*
-    @EventListener
-    public void seed(ContextRefreshedEvent event){
-        String[] names = {"Zenon", "Romek", "Janek", "Stefan", "Enrike"};
-        String[] surname = {"Plech", "Jankowski", "Kmiecik", "Kulczak", "Wazowsky"};
-        for(int i = 0; i < 5; i++) {
-            Actor actor = new Actor();
-            actor.setName(names[i]);
-            actor.setSurname(surname[i]);
-            actorRepository.save(actor);
-        }
-    }
-    */
 }
