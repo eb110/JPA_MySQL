@@ -21,8 +21,8 @@ public class FilmServiceImpl implements FilmService{
     }
 
     @Override
-    public String getFilm(int id){
-        return filmRepository.findById(id).toString();
+    public VladFilm getFilm(int id){
+        return filmRepository.findById(id).orElse(null);
     }
 
     @Override

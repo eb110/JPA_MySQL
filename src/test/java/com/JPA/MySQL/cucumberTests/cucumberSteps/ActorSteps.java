@@ -31,8 +31,8 @@ public class ActorSteps {
     int numberOfActors;
     int actorId;
 
-    @Given("I have a film id {int}")
-    public void i_have_a_film_id(Integer int1) {
+    @Given("I have an actor id {int}")
+    public void i_have_an_actor_id(Integer int1) {
         actorId = int1;
     }
 
