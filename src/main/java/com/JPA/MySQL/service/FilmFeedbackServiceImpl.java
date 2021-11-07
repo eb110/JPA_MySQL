@@ -22,8 +22,8 @@ public class FilmFeedbackServiceImpl implements FilmFeedbackService{
     }
 
     @Override
-    public String getFilmFeedback(int id) {
-        return filmFeedbackRepository.findById(id).toString();
+    public VladFilmFeedback getFilmFeedback(int id) {
+        return filmFeedbackRepository.findById(id).orElse(null);
     }
 
     @Override

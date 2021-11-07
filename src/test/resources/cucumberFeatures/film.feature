@@ -1,4 +1,4 @@
-Feature: Testing the film
+Feature: Testing the actor
 
   Scenario: Test getById get request
     Given I have a film id 1

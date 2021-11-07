@@ -1,8 +1,6 @@
 package com.JPA.MySQL.cucumberTests.cucumberSteps;
 
-import com.JPA.MySQL.model.VladDirector;
 import com.JPA.MySQL.model.VladFilm;
-import com.JPA.MySQL.service.DirectorServiceImpl;
 import com.JPA.MySQL.service.FilmServiceImpl;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
