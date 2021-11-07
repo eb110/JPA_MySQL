@@ -11,7 +11,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
+@Entity(name = "VladActorFeedback")
+@Table(name = "vlad_actor_feedback")
 public class VladActorFeedback {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,4 +21,5 @@ public class VladActorFeedback {
     private int idActor;
     private int idUser;
     private String feedback;
+
 }

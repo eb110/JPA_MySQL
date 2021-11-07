@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -33,9 +34,9 @@ public class VladDirector {
 
     @OneToMany(targetEntity = VladFilm.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idDirector", referencedColumnName = "id")
-    private List<VladDirector> filmVladDirectorList;
+    private List<VladFilm> filmList = new ArrayList<>();
 
     @OneToMany(targetEntity = VladDirectorFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idDirector", referencedColumnName = "id")
-    private List<VladDirector> vladDirectorFeedbackList;
+    private List<VladDirectorFeedback> directorFeedbackList = new ArrayList<>();
 }

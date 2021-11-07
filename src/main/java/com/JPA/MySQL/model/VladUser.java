@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -25,13 +26,13 @@ public class VladUser {
 
     @OneToMany(targetEntity = VladFilmFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idUser", referencedColumnName = "id")
-    private List<VladUser> filmFeedbackList;
+    private List<VladFilmFeedback> filmFeedbackList = new ArrayList<>();
 
     @OneToMany(targetEntity = VladDirectorFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idUser", referencedColumnName = "id")
-    private List<VladUser> directorFeedbackList;
+    private List<VladDirectorFeedback> directorFeedbackList = new ArrayList<>();
 
     @OneToMany(targetEntity = VladActorFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idUser", referencedColumnName = "id")
-    private List<VladUser> actorFeedbackList;
+    private List<VladActorFeedback> actorFeedbackList = new ArrayList<>();
 }

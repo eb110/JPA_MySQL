@@ -7,14 +7,15 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
-
+@Entity(name = "VladActor")
+@Table(name = "vlad_actor")
 public class VladActor {
 
     @Id
@@ -26,12 +27,36 @@ public class VladActor {
     private String nationality;
     private Timestamp dob;
 
-    @OneToMany(targetEntity = VladFilmActors.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "idActor", referencedColumnName = "id")
-    private List<VladActor> filmActorsList;
-
     @OneToMany(targetEntity = VladActorFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idActor", referencedColumnName = "id")
-    private List<VladActor> filmActorFeedbackList;
+    private List<VladActorFeedback> actorFeedbackList = new ArrayList<>();
+
+    @OneToMany(targetEntity = VladFilmActors.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idActor", referencedColumnName = "id")
+    private List<VladFilmActors> filmActorList = new ArrayList<>();
+
+    /*
+    @OneToMany(
+            mappedBy = "actor",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private List<VladFilmActors> filmActorList = new ArrayList<>();
+
+    @OneToMany(
+            mappedBy = "actor",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private List<VladActorFeedback> actorFeedbackList = new ArrayList<>();
+
+    public void addFilmActors(VladFilmActors filmActors) {
+        filmActorList.add(filmActors);
+        filmActors.setActor(this);
+    }
+
+    public void removeComment(VladFilmActors filmActors) {
+        filmActorList.remove(filmActors);
+        filmActors.setActor(null);
+    }
+    */
 
 }

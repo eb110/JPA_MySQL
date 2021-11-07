@@ -12,12 +12,31 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
+@Entity(name = "VladFilmActors")
+@Table(name = "vlad_film_actors")
 public class VladFilmActors {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private int idFilm;
     private int idActor;
+
+    /*
+    @ManyToOne(fetch = FetchType.LAZY)
+    private VladActor actor;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof VladFilmActors )) return false;
+        return id != null && id.equals(((VladFilmActors) o).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
+     */
+
 }

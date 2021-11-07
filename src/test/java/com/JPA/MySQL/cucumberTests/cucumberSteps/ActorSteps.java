@@ -1,12 +1,15 @@
 package com.JPA.MySQL.cucumberTests.cucumberSteps;
 
 import com.JPA.MySQL.model.VladActor;
+import com.JPA.MySQL.model.VladActorFeedback;
+import com.JPA.MySQL.model.VladFilmActors;
 import com.JPA.MySQL.service.ActorServiceImpl;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -20,15 +23,12 @@ public class ActorSteps {
     @Autowired
     private ActorServiceImpl actorService;
 
-
     VladActor actor;
-    String tempName;
     String name;
     VladActor tempActor;
     int correctAttribute;
     List<VladActor> actorsList;
     int numberOfActors;
-
     int actorId;
 
     @Given("I have a film id {int}")
@@ -56,7 +56,6 @@ public class ActorSteps {
         actor.setName("Eryk");
         actor.setSurname("Masztalerz");
         actor.setNationality("Polish");
-        actor.setId(25);
         actor.setDob(null);
     }
 

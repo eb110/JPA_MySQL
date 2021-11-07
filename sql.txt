@@ -1,0 +1,8 @@
+drop table vlad_actor_feedback;
+drop table vlad_film_feedback;
+drop table vlad_director_feedback;
+drop table vlad_film_actors;
+drop table vlad_actor;
+drop table vlad_film;
+drop table vlad_director;
+drop table vlad_user;

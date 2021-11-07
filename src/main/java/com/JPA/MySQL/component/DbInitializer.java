@@ -1,4 +1,4 @@
-package component;
+package com.JPA.MySQL.component;
 
 import com.JPA.MySQL.model.*;
 import com.JPA.MySQL.repository.*;
@@ -39,6 +39,7 @@ public class DbInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+/*
         actorSeed();
         directorSeed();
         userSeed();
@@ -47,6 +48,8 @@ public class DbInitializer implements CommandLineRunner {
         actorFeedbackSeed();
         directorFeedbackSeed();
         filmFeedbackSeed();
+*/
+
     }
 
     private void filmFeedbackSeed() {
