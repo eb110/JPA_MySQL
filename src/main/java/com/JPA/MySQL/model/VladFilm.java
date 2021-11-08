@@ -29,5 +29,5 @@ public class VladFilm {
 
     @OneToMany(targetEntity = VladFilmActors.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idFilm", referencedColumnName = "id")
-    private List<VladFilmActors> fFilmActorsList = new ArrayList<>();
+    private List<VladFilmActors> filmActorsList = new ArrayList<>();
 }
