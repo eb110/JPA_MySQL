@@ -1,21 +1,11 @@
 package com.JPA.MySQL.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-@Entity(name = "VladActor")
-@Table(name = "vlad_actor")
+@Entity
 public class VladActor {
 
     @Id
@@ -24,6 +14,66 @@ public class VladActor {
 
     private String name;
     private String surname;
+
+    public VladActor() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public Timestamp getDob() {
+        return dob;
+    }
+
+    public void setDob(Timestamp dob) {
+        this.dob = dob;
+    }
+
+    public List<VladActorFeedback> getActorFeedbackList() {
+        return actorFeedbackList;
+    }
+
+    public void setActorFeedbackList(List<VladActorFeedback> actorFeedbackList) {
+        this.actorFeedbackList = actorFeedbackList;
+    }
+
+    public List<VladFilmActors> getFilmActorList() {
+        return filmActorList;
+    }
+
+    public void setFilmActorList(List<VladFilmActors> filmActorList) {
+        this.filmActorList = filmActorList;
+    }
+
     private String nationality;
     private Timestamp dob;
 

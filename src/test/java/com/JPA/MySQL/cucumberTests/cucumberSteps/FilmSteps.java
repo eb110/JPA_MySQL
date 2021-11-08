@@ -1,6 +1,7 @@
 package com.JPA.MySQL.cucumberTests.cucumberSteps;
 
 import com.JPA.MySQL.model.VladFilm;
+import com.JPA.MySQL.service.FilmService;
 import com.JPA.MySQL.service.FilmServiceImpl;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 public class FilmSteps {
 
     @Autowired
-    private FilmServiceImpl filmService;
+    private FilmService filmService = new FilmServiceImpl();
 
     int filmId;
     String filmName;
