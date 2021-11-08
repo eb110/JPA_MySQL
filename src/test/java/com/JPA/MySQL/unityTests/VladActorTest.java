@@ -1,6 +1,6 @@
 package com.JPA.MySQL.unityTests;
 
-import com.JPA.MySQL.model.Actor;
+import com.JPA.MySQL.model.VladActor;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Timestamp;
@@ -10,9 +10,9 @@ import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ActorTest {
+class VladActorTest {
 
-    Actor actor = new Actor();
+    VladActor actor = new VladActor();
 
     @Test
     void getId() {
