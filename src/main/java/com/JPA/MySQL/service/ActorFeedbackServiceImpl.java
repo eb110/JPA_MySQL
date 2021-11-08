@@ -22,8 +22,8 @@ public class ActorFeedbackServiceImpl implements ActorFeedbackService{
     }
 
     @Override
-    public String getActorFeedback(int id) {
-        return actorFeedbackRepository.findById(id).toString();
+    public VladActorFeedback getActorFeedback(int id) {
+        return actorFeedbackRepository.findById(id).orElse(null);
     }
 
     @Override

@@ -22,8 +22,8 @@ public class FilmActorsServiceImpl implements FilmActorsService{
     }
 
     @Override
-    public String getFilmActors(int id) {
-        return filmActorsRepository.findById(id).toString();
+    public VladFilmActors getFilmActors(int id) {
+        return filmActorsRepository.findById(id).orElse(null);
     }
 
     @Override

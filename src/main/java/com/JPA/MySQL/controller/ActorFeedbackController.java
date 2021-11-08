@@ -24,7 +24,7 @@ public class ActorFeedbackController {
     }
 
     @GetMapping("/getById/{id}")
-    public String getActorFeedback(@PathVariable("id") int id){
+    public VladActorFeedback getActorFeedback(@PathVariable("id") int id){
         return actorFeedbackService.getActorFeedback(id);
     }
 

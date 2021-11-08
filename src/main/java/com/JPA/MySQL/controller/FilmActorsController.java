@@ -24,7 +24,7 @@ public class FilmActorsController {
     }
 
     @GetMapping("/getById/{id}")
-    public String getFilmActors(@PathVariable("id") int id){
+    public VladFilmActors getFilmActors(@PathVariable("id") int id){
         return filmActorsService.getFilmActors(id);
     }
 

@@ -1,20 +1,15 @@
 package com.JPA.MySQL.cucumberTests.cucumberSteps;
 
 import com.JPA.MySQL.model.VladActor;
-import com.JPA.MySQL.model.VladActorFeedback;
-import com.JPA.MySQL.model.VladFilmActors;
 import com.JPA.MySQL.service.ActorServiceImpl;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest

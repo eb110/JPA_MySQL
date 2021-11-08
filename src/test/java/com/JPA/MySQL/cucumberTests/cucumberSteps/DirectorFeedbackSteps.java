@@ -1,9 +1,7 @@
 package com.JPA.MySQL.cucumberTests.cucumberSteps;
 
 import com.JPA.MySQL.model.VladDirectorFeedback;
-import com.JPA.MySQL.model.VladFilmFeedback;
 import com.JPA.MySQL.service.DirectorFeedbackServiceImpl;
-import com.JPA.MySQL.service.FilmFeedbackServiceImpl;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -43,7 +41,7 @@ public class DirectorFeedbackSteps {
     @Given("the sum of director feedbacks")
     public void the_sum_of_director_feedbacks() {
         var feedbacks = directorFeedbackService.getAllDirectorFeedbacks();
-        totalNrOfFeedbacks = StreamSupport.stream(feedbacks.spliterator(), false).collect(Collectors.toList()).size();;
+        totalNrOfFeedbacks = StreamSupport.stream(feedbacks.spliterator(), false).collect(Collectors.toList()).size();
     }
     @When("i post new director feedback")
     public void i_post_new_director_feedback() {
