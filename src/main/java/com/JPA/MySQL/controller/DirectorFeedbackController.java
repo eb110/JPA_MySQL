@@ -1,6 +1,7 @@
 package com.JPA.MySQL.controller;
 
 import com.JPA.MySQL.model.VladDirectorFeedback;
+import com.JPA.MySQL.model.VladFilmFeedback;
 import com.JPA.MySQL.service.DirectorFeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,7 +25,7 @@ public class DirectorFeedbackController {
     }
 
     @GetMapping("/getById/{id}")
-    public String getDirectorFeedback(@PathVariable("id") int id){
+    public VladDirectorFeedback getDirectorFeedback(@PathVariable("id") int id){
         return directorFeedbackService.getDirectorFeedback(id);
     }
 

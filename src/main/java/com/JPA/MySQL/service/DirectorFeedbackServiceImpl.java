@@ -22,8 +22,8 @@ public class DirectorFeedbackServiceImpl implements DirectorFeedbackService {
     }
 
     @Override
-    public String getDirectorFeedback(int id) {
-        return directorFeedbackRepository.findById(id).toString();
+    public VladDirectorFeedback getDirectorFeedback(int id) {
+        return directorFeedbackRepository.findById(id).orElse(null);
     }
 
     @Override

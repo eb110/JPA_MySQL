@@ -12,8 +12,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-import static org.junit.Assert.assertEquals;
-
 public class FilmFeedbackSteps {
 
     @Autowired
@@ -27,6 +25,7 @@ public class FilmFeedbackSteps {
 
     @Given("the actor feedback record from the db")
     public void the_actor_feedback_record_from_the_db() {
+
         filmFeedback = filmFeedbackService.getFilmFeedback(1);
     }
     @When("i check its feedback")
@@ -68,14 +67,17 @@ public class FilmFeedbackSteps {
         feedbackList = StreamSupport.stream(feedbacks.spliterator(), false).collect(Collectors.toList());
         lastId = feedbackList.get(feedbackList.size() - 1).getId();
     }
+
     @Given("the total number of actor feedbacks")
     public void the_total_number_of_actor_feedbacks() {
         totalNrOfFeedbacks = feedbackList.size();
     }
+
     @When("i delete the last record")
     public void i_delete_the_last_record() {
         filmFeedbackService.deleteFilmFeedback(lastId);
     }
+
     @Then("new total number of actor feedbacks has to be lower by one")
     public void new_total_number_of_actor_feedbacks_has_to_be_lower_by_one() {
         var feedbacks = filmFeedbackService.getAllFilmFeedback();
