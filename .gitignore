@@ -1,4 +1,4 @@
-src/main/resources/application.yml
+target/resources/
 
 HELP.md
 target/
