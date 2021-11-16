@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith( Cucumber.class )
 @CucumberOptions(
         features = "src/test/resources/cucumberFeatures",
-        glue = {"com.JPA.MySQL.cucumberTests.cucumberSteps"}
+        glue = {"com.JPA.MySQL.cucumberTests"}
 )
 
 public class CucumberRunner {
