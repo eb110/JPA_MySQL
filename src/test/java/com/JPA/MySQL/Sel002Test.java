@@ -21,11 +21,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
+import org.springframework.boot.test.context.SpringBootTest;
+
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
+//@SpringBootTest
 public class Sel002Test {
   private WebDriver driver;
   private Map<String, Object> vars;
@@ -43,9 +46,9 @@ public class Sel002Test {
   }
   @Test
   public void sel002() {
-    driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     driver.get("http://localhost:3000/");
-    driver.manage().window().setSize(new Dimension(1920, 882));
+    driver.manage().window().setSize(new Dimension(1200, 700));
     driver.findElement(By.cssSelector(".movieButton:nth-child(1)")).click();
     driver.findElement(By.cssSelector(".movieButton:nth-child(2)")).click();
     driver.findElement(By.cssSelector(".movieButton:nth-child(3)")).click();
