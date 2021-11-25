@@ -1,0 +1,19 @@
+cloud:
+  aws:
+    region:
+      static: us-east-1
+      auto: false
+    credentials:
+      access-key: ${aws_access_key}
+      secret-key: ${aws_secret_key}
+
+
+maven-publish.yml env
+     env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
+          aws_db_url: ${{ secrets.AWS_DB_URL }}
+          aws_db_user: ${{ secrets.AWS_DB_USER }}
+          aws_db_password: ${{ secrets.AWS_DB_PASSWORD }}
