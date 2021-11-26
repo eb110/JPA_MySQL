@@ -48,29 +48,16 @@ public class Sel002Test {
   public void sel002() {
     driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     driver.get("http://localhost:3000/");
-    driver.manage().window().setSize(new Dimension(1200, 700));
-    driver.findElement(By.cssSelector(".movieButton:nth-child(1)")).click();
+    driver.manage().window().setSize(new Dimension(1536, 824));
     driver.findElement(By.cssSelector(".movieButton:nth-child(2)")).click();
+    driver.findElement(By.cssSelector(".movieButton:nth-child(4)")).click();
     driver.findElement(By.cssSelector(".movieButton:nth-child(3)")).click();
-    driver.findElement(By.cssSelector(".movieButton:nth-child(2)")).click();
-    driver.findElement(By.cssSelector(".actorTodo:nth-child(1) .actorFeedbackButtonShow")).click();
-    {
-      WebElement element = driver.findElement(By.cssSelector(".actorTodo:nth-child(1) .actorFeedbackButtonShow"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element).perform();
-    }
-    {
-      WebElement element = driver.findElement(By.tagName("body"));
-      Actions builder = new Actions(driver);
-      builder.moveToElement(element, 0, 0).perform();
-    }
-    driver.findElement(By.cssSelector("div:nth-child(2) > div > .actorFeedDeleteButton")).click();
     driver.findElement(By.cssSelector(".actorTodo:nth-child(1) .actorFeedbackAddFeedbackButton")).click();
     driver.findElement(By.cssSelector(".inputActorFeedback")).click();
-    driver.findElement(By.cssSelector(".inputActorFeedback")).sendKeys("001");
+    driver.findElement(By.cssSelector(".inputActorFeedback")).sendKeys("new feedback");
     driver.findElement(By.cssSelector(".actorFeedbackAddButton")).click();
-    driver.findElement(By.cssSelector(".actorTodo:nth-child(1) .actorFeedbackAddFeedbackButton")).click();
     driver.findElement(By.cssSelector(".actorTodo:nth-child(1) .actorFeedbackButtonShow")).click();
+    driver.findElement(By.cssSelector("div:nth-child(1) > div > .actorFeedDeleteButton")).click();
     driver.close();
   }
 }

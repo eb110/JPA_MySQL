@@ -7,8 +7,10 @@ import com.JPA.MySQL.service.UserServiceImpl;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,6 +18,7 @@ import java.util.stream.StreamSupport;
 
 import static org.junit.Assert.assertEquals;
 
+@SpringBootTest
 public class UserSteps {
 
     @Autowired
