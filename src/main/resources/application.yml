@@ -6,3 +6,6 @@ cloud:
     credentials:
       access-key: AKIA324DP7OSXARWIFXX
       secret-key: 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
+
+server:
+  port: 8080
