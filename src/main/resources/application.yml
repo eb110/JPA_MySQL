@@ -4,8 +4,8 @@ cloud:
       static: us-east-1
       auto: false
     credentials:
-      access-key: AKIA324DP7OSXARWIFXX
-      secret-key: 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
+      access-key: ${aws_access_key}
+      secret-key: ${aws_secret_key}
 
 server:
   port: 8080
