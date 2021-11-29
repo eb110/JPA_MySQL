@@ -19,10 +19,9 @@ public class VladUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
-    private String surname;
+    private String userName;
     private String email;
-    private String encryptedPassword;
+    private String password;
 
     @OneToMany(targetEntity = VladFilmFeedback.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "idUser", referencedColumnName = "id")

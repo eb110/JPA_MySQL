@@ -39,7 +39,7 @@ public class UserSteps {
     @When("i want to check user name")
     public void i_want_to_check_user_name() {
         VladUser user = userService.getUser(userId);
-        userName = user.getName();
+        userName = user.getUserName();
     }
     @Then("user name is {string}")
     public void user_name_is(String string) {
@@ -52,9 +52,8 @@ public class UserSteps {
     public void a_new_user() {
         user = new VladUser();
         user.setEmail("wfigura@op.pl");
-        user.setName("Darth");
-        user.setSurname("Vader");
-        user.setEncryptedPassword("sixth planet of canopus");
+        user.setUserName("Darth");
+        user.setPassword("sixth planet of canopus");
     }
     @Given("post user into the db")
     public void post_user_into_the_db() {
@@ -73,21 +72,19 @@ public class UserSteps {
     @When("i compare both users")
     public void i_compare_both_users() {
         correctAttribute = 0;
-        Assertions.assertEquals(user.getName(), tempUser.getName(), "Wrong actor name");
+        Assertions.assertEquals(user.getUserName(), tempUser.getUserName(), "Wrong actor name");
         correctAttribute++;
         userId = tempUser.getId();
-        Assertions.assertEquals(user.getSurname(), tempUser.getSurname(), "Wrong surname");
-        correctAttribute++;
         Assertions.assertEquals(tempUser.getId(), userId, "Wrong id");
         correctAttribute++;
         Assertions.assertEquals(tempUser.getEmail(), user.getEmail(), "wrong email");
         correctAttribute++;
-        Assertions.assertEquals(tempUser.getEncryptedPassword(), user.getEncryptedPassword(), "wrong password");
+        Assertions.assertEquals(tempUser.getPassword(), user.getPassword(), "wrong password");
         correctAttribute++;
     }
     @Then("users are the same")
     public void users_are_the_same() {
-            Assertions.assertEquals(correctAttribute, 5);
+            Assertions.assertEquals(correctAttribute, 4);
     }
 
     //##########################################################

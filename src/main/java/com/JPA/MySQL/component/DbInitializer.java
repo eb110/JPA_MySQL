@@ -40,7 +40,7 @@ public class DbInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        /*
+/*
         actorSeed();
         directorSeed();
         userSeed();
@@ -49,8 +49,8 @@ public class DbInitializer implements CommandLineRunner {
         actorFeedbackSeed();
         directorFeedbackSeed();
         filmFeedbackSeed();
-        */
 
+*/
     }
 
     private void filmFeedbackSeed() {
@@ -130,15 +130,13 @@ public class DbInitializer implements CommandLineRunner {
     }
     private void userSeed(){
         String[] names = {"Kyle", "eb110", "Gareth", "Andrea", "Lauren"};
-        String[] surname = {"Orr", "Bugatti", "theFirst", "bestProgrammer", "bestMathematician"};
         String[] email = {"Scottish@co.uk", "wfigura@op.pl", "Scottish@yahoo.com", "Romanian@co.uk", "Scottish@wp.pl"};
         String[] pswrd = {"2000/06/17", "1978/07/17", "1983/11/11", "2000/02/10", "2000/12/23"};
         for(int i = 0; i < 5; i++) {
             VladUser user = new VladUser();
-            user.setName(names[i]);
-            user.setSurname(surname[i]);
+            user.setUserName(names[i]);
             user.setEmail(email[i]);
-            user.setEncryptedPassword(pswrd[i]);
+            user.setPassword(pswrd[i]);
             userRepository.save(user);
         }
         System.out.println("Users have been seeded");
