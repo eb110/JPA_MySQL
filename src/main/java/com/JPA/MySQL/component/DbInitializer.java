@@ -34,6 +34,7 @@ public class DbInitializer implements CommandLineRunner {
         this.filmActorsRepository = filmActorsRepository;
         this.actorFeedbackRepository = actorFeedbackRepository;
         this.directorFeedbackRepository = directorFeedbackRepository;
+
         this.filmFeedbackRepository = filmFeedbackRepository;
     }
 
