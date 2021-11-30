@@ -30,4 +30,12 @@ public class ActorFeedbackServiceImpl implements ActorFeedbackService{
     public void deleteActorFeedback(int id) {
         actorFeedbackRepository.deleteById(id);
     }
+
+    @Override
+    public void updateActorFeedback(VladActorFeedback actorFeedback, int id) {
+        VladActorFeedback updateFeedback = actorFeedbackRepository.findById(id).orElse(null);
+        updateFeedback.setId(id);
+        updateFeedback.setFeedback(actorFeedback.getFeedback());
+        actorFeedbackRepository.save(updateFeedback);
+    }
 }

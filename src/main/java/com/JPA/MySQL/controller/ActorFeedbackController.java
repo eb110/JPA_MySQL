@@ -34,4 +34,11 @@ public class ActorFeedbackController {
     public void delete(@PathVariable("id") int id) {
         actorFeedbackService.deleteActorFeedback(id);
     }
+
+    @PutMapping("/add/{id}")
+    public String updateFeedback(@RequestBody VladActorFeedback actorFeedback, @PathVariable("id") int id){
+        System.out.println(actorFeedback.getFeedback());
+        actorFeedbackService.updateActorFeedback(actorFeedback, id);
+        return "actor feedback updated";
+    }
 }
