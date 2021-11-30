@@ -12,6 +12,10 @@ public class VladFilm {
     private int id;
     //
     private String title;
+    private String description;
+    private String length;
+    private String rating;
+    private int release_year;
     private int idDirector;
 
     @OneToMany(targetEntity = VladFilmFeedback.class, cascade = CascadeType.ALL)
@@ -63,5 +67,37 @@ public class VladFilm {
 
     public void setFilmActorsList(List<VladFilmActors> filmActorsList) {
         this.filmActorsList = filmActorsList;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getLength() {
+        return length;
+    }
+
+    public void setLength(String length) {
+        this.length = length;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public int getRelease_year() {
+        return release_year;
+    }
+
+    public void setRelease_year(int release_year) {
+        this.release_year = release_year;
     }
 }

@@ -55,7 +55,11 @@ public class DbInitializer implements CommandLineRunner {
     }
 
     private void filmFeedbackSeed() {
-        String[] feedbacks = {"This film is great", "Top 5 on the whole world", "I like it", "I love to watch it", "Best film ever"};
+        String[] feedbacks = {"The Godfather is quite simply a masterful piece of film-making",
+                "Shawshank is enthralling, fantastic, intriguing, truly remarkable!",
+                "The Dark Knight: The Greatest Superhero Film Ever Made",
+                "There's nothing fictional about this movie's high quality.",
+                "Possibly the dumbest movie I've seen. Not scary at all."};
         for(int i = 0; i < 5; i++){
             VladFilmFeedback vladFilmFeedback = new VladFilmFeedback();
             vladFilmFeedback.setIdUser(i+1);
@@ -67,7 +71,10 @@ public class DbInitializer implements CommandLineRunner {
     }
 
     private void directorFeedbackSeed() {
-        String[] feedbacks = {"This director is such a nice person", "Top 5 on the whole world", "I like it", "I love to watch his movies", "Best director ever"};
+        String[] feedbacks = {"The story by Francis Ford Coppola is a brilliant conjuring act",
+                "There’s not much more that can be said about Frank Darabont’s astonishing 1994 masterpiece",
+                "Nolan cements his position as Hollywood's premier purveyor of blockbuster smarts", "All in all, director Quentin Tarantino created a real masterpiece here.",
+                "Classic! Incredible work by Stanley Kubrick!"};
         for(int i = 0; i < 5; i++){
             VladDirectorFeedback vladDirectorFeedback = new VladDirectorFeedback();
             vladDirectorFeedback.setIdUser(i+1);
@@ -79,7 +86,9 @@ public class DbInitializer implements CommandLineRunner {
     }
 
     private void actorFeedbackSeed() {
-        String[] feedbacks = {"This actor is such a nice person", "Top 5 on the whole world", "I like it", "I love to watch him", "Best actor ever"};
+        String[] feedbacks = {"Marlon Brando gives a great performance as Don Vito Corleone", "This is Tim Robbins' best role",
+                "Bale, will most likely be remembered as the greatest dark knight ever to stalk the rooftops of Gotham City.",
+                "John Travolta in his best role (relaunching his dead career)", "This is one of Jack Nicholson's finest roles"};
         for(int i = 0; i < 5; i++){
             VladActorFeedback actorFeedback = new VladActorFeedback();
             actorFeedback.setIdUser(i+1);
@@ -91,10 +100,10 @@ public class DbInitializer implements CommandLineRunner {
     }
 
     private void actorSeed(){
-        String[] names = {"Zenon", "Romek", "Janek", "Stefan", "Enrike"};
-        String[] surname = {"Plech", "Jankowski", "Kmiecik", "Kulczak", "Wazowsky"};
-        String[] nation = {"Polish", "Romanian", "Scottish", "Welsh", "French"};
-        String[] dobs = {"1996/06/17", "1956/07/27", "1945/11/11", "1959/02/10", "1965/12/23"};
+        String[] names = {"Marlon", "Tim", "Christian", "John", "Jack"};
+        String[] surname = {"Brando", "Robbins", "Bale", "Travolta", "Nicholson"};
+        String[] nation = {"American", "American", "English", "American", "American"};
+        String[] dobs = {"1924/04/03", "1958/10/16", "1974/01/30", "1954/02/18", "1937/04/22"};
         for(int i = 0; i < 5; i++) {
             VladActor actor = new VladActor();
             actor.setName(names[i]);
@@ -111,10 +120,10 @@ public class DbInitializer implements CommandLineRunner {
     }
 
     private void directorSeed(){
-        String[] names = {"Franc", "Laszlo", "Jurgen", "Hole", "Eustachy"};
-        String[] surname = {"Mauer", "Body", "Klinsman", "Maczupikczu", "Rozenstein"};
-        String[] nation = {"Polish", "Romanian", "Scottish", "Welsh", "French"};
-        String[] dobs = {"1996/06/17", "1956/07/27", "1945/11/11", "1959/02/10", "1965/12/23"};
+        String[] names = {"Francis", "Frank", "Christopher", "Quentin", "Stanley"};
+        String[] surname = {"Coppola", "Darabont", "Nolan", "Tarantino", "Kubrick"};
+        String[] nation = {"American", "French", "English", "American", "American"};
+        String[] dobs = {"1939/04/07", "1959/01/28", "1970/07/30", "1963/03/27", "1928/07/26"};
         for(int i = 0; i < 5; i++) {
             VladDirector vladDirector = new VladDirector();
             vladDirector.setName(names[i]);
@@ -143,7 +152,16 @@ public class DbInitializer implements CommandLineRunner {
         System.out.println("Users have been seeded");
     }
     private void filmSeed(){
-        String[] title = {"KyleTitle", "eb110Title", "GarethTitle", "AndreaTitle", "LaurenTitle"};
+        String[] title = {"The Godfather", "The Shawshank Redemption", "The Dark Knight", "Pulp Fiction", "The Shining"};
+        String[] description ={"The Godfather follows Vito Corleone Don of the Corleone family as he passes the mantel to his son Michael.",
+                "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+                "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+                "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                "A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future."};
+        String[] length ={"2 hours 55 minutes", "2 hours 22 minutes", "2 hours 32 minutes", "2 hours 34 minutes", "2 hours 26 minutes"};
+        int[] release_year = {1972, 1994, 2008, 1994, 1980};
+        String[] rating ={"18", "15", "12", "18", "15"};
+
 
         for(int i = 0; i < 5; i++) {
             VladFilm vladFilm = new VladFilm();
