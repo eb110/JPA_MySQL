@@ -10,7 +10,7 @@ public class VladFilm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+    //
     private String title;
     private int idDirector;
 
