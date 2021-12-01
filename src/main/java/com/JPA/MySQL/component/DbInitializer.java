@@ -86,9 +86,10 @@ public class DbInitializer implements CommandLineRunner {
     }
 
     private void actorFeedbackSeed() {
-        String[] feedbacks = {"Marlon Brando gives a great performance as Don Vito Corleone", "This is Tim Robbins' best role",
+        String[] feedbacks = {"This is one of Jack Nicholson's finest roles", "John Travolta in his best role (relaunching his dead career)",
                 "Bale, will most likely be remembered as the greatest dark knight ever to stalk the rooftops of Gotham City.",
-                "John Travolta in his best role (relaunching his dead career)", "This is one of Jack Nicholson's finest roles"};
+                "This is Tim Robbins' best role", "Marlon Brando gives a great performance as Don Vito Corleone"};
+
         for(int i = 0; i < 5; i++){
             VladActorFeedback actorFeedback = new VladActorFeedback();
             actorFeedback.setIdUser(i+1);
@@ -159,7 +160,7 @@ public class DbInitializer implements CommandLineRunner {
                 "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
                 "A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future."};
         String[] length ={"2 hours 55 minutes", "2 hours 22 minutes", "2 hours 32 minutes", "2 hours 34 minutes", "2 hours 26 minutes"};
-        int[] release_year = {1972, 1994, 2008, 1994, 1980};
+//        int[] release_year = {1972, 1994, 2008, 1994, 1980};
         String[] rating ={"18", "15", "12", "18", "15"};
 
 
