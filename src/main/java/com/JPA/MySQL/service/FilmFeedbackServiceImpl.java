@@ -1,5 +1,6 @@
 package com.JPA.MySQL.service;
 
+import com.JPA.MySQL.model.VladActorFeedback;
 import com.JPA.MySQL.model.VladFilmFeedback;
 import com.JPA.MySQL.repository.FilmFeedbackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +30,13 @@ public class FilmFeedbackServiceImpl implements FilmFeedbackService{
     @Override
     public void deleteFilmFeedback(int id) {
         filmFeedbackRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateFilmFeedback(VladFilmFeedback filmFeedback, int id) {
+        VladFilmFeedback updateFeedback = filmFeedbackRepository.findById(id).orElse(null);
+        updateFeedback.setId(id);
+        updateFeedback.setFeedback(filmFeedback.getFeedback());
+        filmFeedbackRepository.save(updateFeedback);
     }
 }

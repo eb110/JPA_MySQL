@@ -1,5 +1,6 @@
 package com.JPA.MySQL.service;
 
+import com.JPA.MySQL.model.VladActorFeedback;
 import com.JPA.MySQL.model.VladFilmFeedback;
 
 public interface FilmFeedbackService {
@@ -7,4 +8,5 @@ public interface FilmFeedbackService {
     public Iterable<VladFilmFeedback> getAllFilmFeedback();
     public VladFilmFeedback getFilmFeedback(int id);
     public void deleteFilmFeedback(int id);
+    public void updateFilmFeedback(VladFilmFeedback filmFeedback, int id);
 }

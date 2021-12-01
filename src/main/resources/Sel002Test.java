@@ -1,5 +1,3 @@
-package com.JPA.MySQL;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Test;
 import org.junit.Before;
@@ -36,13 +34,13 @@ public class Sel002Test {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-   // WebDriverManager.chromedriver().setup();
-   // driver = new ChromeDriver();
-    System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("headless");
-    options.addArguments("disable-gpu");
-    driver = new ChromeDriver(options);
+    WebDriverManager.chromedriver().setup();
+    driver = new ChromeDriver();
+   // System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+  //  ChromeOptions options = new ChromeOptions();
+  //  options.addArguments("headless");
+  //  options.addArguments("disable-gpu");
+ //   driver = new ChromeDriver(options);
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }

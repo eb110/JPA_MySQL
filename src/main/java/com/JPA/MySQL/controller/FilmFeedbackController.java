@@ -1,5 +1,6 @@
 package com.JPA.MySQL.controller;
 
+import com.JPA.MySQL.model.VladActorFeedback;
 import com.JPA.MySQL.model.VladFilmFeedback;
 import com.JPA.MySQL.service.FilmFeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,12 @@ public class FilmFeedbackController {
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable("id") int id) {
         filmFeedbackService.deleteFilmFeedback(id);
+    }
+
+    @PutMapping("/add/{id}")
+    public String updateFeedback(@RequestBody VladFilmFeedback filmFeedback, @PathVariable("id") int id){
+        System.out.println(filmFeedback.getFeedback());
+        filmFeedbackService.updateFilmFeedback(filmFeedback, id);
+        return "film feedback updated";
     }
 }
