@@ -3,7 +3,7 @@ Feature: Testing the director
   Scenario: Test getById get request
     Given I have a director id 1
     When i want to check director name
-    Then director name is "Franc"
+    Then director name is "Francis"
 
   Scenario: Test the director object
     Given a new director

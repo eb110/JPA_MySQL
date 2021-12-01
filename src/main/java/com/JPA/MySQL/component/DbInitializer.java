@@ -41,7 +41,7 @@ public class DbInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-/*
+
         actorSeed();
         directorSeed();
         userSeed();
@@ -50,7 +50,7 @@ public class DbInitializer implements CommandLineRunner {
         actorFeedbackSeed();
         directorFeedbackSeed();
         filmFeedbackSeed();
-*/
+
 
     }
 

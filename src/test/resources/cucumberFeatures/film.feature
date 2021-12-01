@@ -3,7 +3,7 @@ Feature: Testing the film
   Scenario: Test getById get request
     Given I have a film id 1
     When i want to check film title
-    Then film title is "KyleTitle"
+    Then film title is "The Godfather"
 
   Scenario: Test the film object
     Given a new film

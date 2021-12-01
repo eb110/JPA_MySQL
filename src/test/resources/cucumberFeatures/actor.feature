@@ -3,7 +3,7 @@ Feature: Testing the actor
   Scenario: Test getById get request
     Given I have an actor id 1
     When i want to check the name
-    Then I receive a "Zenon"
+    Then I receive a "Marlon"
 
   Scenario: Test the actor object
     Given a new actor
