@@ -36,13 +36,13 @@ public class Sel002Test {
   JavascriptExecutor js;
   @Before
   public void setUp() {
-    WebDriverManager.chromedriver().setup();
-    driver = new ChromeDriver();
-   // System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-  //  ChromeOptions options = new ChromeOptions();
-  //  options.addArguments("headless");
-  //  options.addArguments("disable-gpu");
- //   driver = new ChromeDriver(options);
+  //  WebDriverManager.chromedriver().setup();
+  //  driver = new ChromeDriver();
+    System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("headless");
+    options.addArguments("disable-gpu");
+    driver = new ChromeDriver(options);
     js = (JavascriptExecutor) driver;
     vars = new HashMap<String, Object>();
   }
@@ -53,8 +53,8 @@ public class Sel002Test {
   @Test
   public void sel002() throws InterruptedException {
 
-  // driver.get("http://54.211.251.198:3000");
-    driver.get("http://localhost:3000/");
+   driver.get("http://54.175.41.203:3000");
+//   driver.get("http://localhost:3000/");
     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     driver.manage().window().setSize(new Dimension(1536, 824));
     driver.findElement(By.cssSelector(".movieButton:nth-child(3)")).click();
