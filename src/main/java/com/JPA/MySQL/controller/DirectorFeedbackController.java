@@ -1,5 +1,6 @@
 package com.JPA.MySQL.controller;
 
+import com.JPA.MySQL.model.VladActorFeedback;
 import com.JPA.MySQL.model.VladDirectorFeedback;
 import com.JPA.MySQL.model.VladFilmFeedback;
 import com.JPA.MySQL.service.DirectorFeedbackService;
@@ -34,5 +35,11 @@ public class DirectorFeedbackController {
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable("id") int id) {
         directorFeedbackService.deleteDirectorFeedback(id);
+    }
+
+    @PutMapping("/add/{id}")
+    public String updateFeedback(@RequestBody VladDirectorFeedback directorFeedback, @PathVariable("id") int id){
+        directorFeedbackService.updateDirectorFeedback(directorFeedback, id);
+        return "actor feedback updated";
     }
 }

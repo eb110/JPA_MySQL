@@ -29,7 +29,7 @@ public class FilmFeedbackSteps {
 
     @Given("the film feedback record from the db")
     public void the_film_feedback_record_from_the_db() {
-        filmFeedback = filmFeedbackService.getFilmFeedback(1);
+        filmFeedback = filmFeedbackService.getFilmFeedback(2);
     }
     @When("i check its film feedback")
     public void i_check_its_film_feedback() {

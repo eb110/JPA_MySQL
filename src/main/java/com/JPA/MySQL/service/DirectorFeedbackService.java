@@ -1,5 +1,6 @@
 package com.JPA.MySQL.service;
 
+import com.JPA.MySQL.model.VladActorFeedback;
 import com.JPA.MySQL.model.VladDirectorFeedback;
 
 public interface DirectorFeedbackService {
@@ -7,4 +8,5 @@ public interface DirectorFeedbackService {
     public Iterable<VladDirectorFeedback> getAllDirectorFeedbacks();
     public VladDirectorFeedback getDirectorFeedback(int id);
     public void deleteDirectorFeedback(int id);
+    public void updateDirectorFeedback(VladDirectorFeedback directorFeedback, int id);
 }
