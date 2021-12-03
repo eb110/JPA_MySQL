@@ -86,7 +86,7 @@ public class DbInitializer implements CommandLineRunner {
     private void directorFeedbackSeed() {
         String[] feedbacks = {"The story by Francis Ford Coppola is a brilliant conjuring act",
                 "There’s not much more that can be said about Frank Darabont’s astonishing 1994 masterpiece",
-                "Nolan cements his position as Hollywood's premier purveyor of blockbuster smarts", "All in all, director Quentin Tarantino created a real masterpiece here.",
+                "Nolan cements his position as  Hollywood's premier purveyor of blockbuster smarts", "All in all, director Quentin Tarantino created a real masterpiece here.",
                 "Classic! Incredible work by Stanley Kubrick!"};
         for(int i = 0; i < 5; i++){
             VladDirectorFeedback vladDirectorFeedback = new VladDirectorFeedback();
