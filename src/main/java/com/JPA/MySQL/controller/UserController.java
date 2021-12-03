@@ -18,7 +18,8 @@ The user rest API controller
  */
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RequestMapping("/user")
 public class UserController {
     @Autowired

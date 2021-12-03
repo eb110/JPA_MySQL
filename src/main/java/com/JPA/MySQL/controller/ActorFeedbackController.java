@@ -18,7 +18,8 @@ The actor feedback rest API controller
  */
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RequestMapping("/actorFeedback")
 public class ActorFeedbackController {
     @Autowired

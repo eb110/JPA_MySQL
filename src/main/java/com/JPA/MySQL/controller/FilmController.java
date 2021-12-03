@@ -18,7 +18,8 @@ The film rest API controller
  */
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @RequestMapping("/film")
 public class FilmController {
     @Autowired
