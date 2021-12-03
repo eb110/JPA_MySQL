@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.*;
 The films and actors rest API controller
  */
 
-@RestController
 //@CrossOrigin(origins = "http://localhost:3000")
 @CrossOrigin(origins = "*")
+@RestController
 @RequestMapping("/filmActors")
 public class FilmActorsController {
     @Autowired
