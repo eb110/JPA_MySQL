@@ -1,3 +1,10 @@
+/*
+Author: Wladyslaw Figura
+Company: The Software Institute
+Date: November 2021
+git: https://github.com/eb110/JPA_MySQL.git
+ */
+
 package com.JPA.MySQL.service;
 
 import com.JPA.MySQL.model.VladActorFeedback;
@@ -5,6 +12,10 @@ import com.JPA.MySQL.model.VladFilmFeedback;
 import com.JPA.MySQL.repository.FilmFeedbackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+/*
+The film feedback crud operations
+ */
 
 @Service
 public class FilmFeedbackServiceImpl implements FilmFeedbackService{

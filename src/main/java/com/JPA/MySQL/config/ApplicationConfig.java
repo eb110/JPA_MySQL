@@ -1,3 +1,10 @@
+/*
+Author: Wladyslaw Figura
+Company: The Software Institute
+Date: November 2021
+git: https://github.com/eb110/JPA_MySQL.git
+ */
+
 package com.JPA.MySQL.config;
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
@@ -12,6 +19,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
+
+/*
+The AWS service and data base configuration and connection
+ */
 
 @Configuration
 public class ApplicationConfig {

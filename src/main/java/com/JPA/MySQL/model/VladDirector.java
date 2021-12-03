@@ -1,9 +1,20 @@
+/*
+Author: Wladyslaw Figura
+Company: The Software Institute
+Date: November 2021
+git: https://github.com/eb110/JPA_MySQL.git
+ */
+
 package com.JPA.MySQL.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+/*
+the data-base table director model
+ */
 
 @Entity
 public class VladDirector {

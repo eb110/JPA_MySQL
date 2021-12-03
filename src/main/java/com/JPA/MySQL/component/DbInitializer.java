@@ -1,3 +1,10 @@
+/*
+Author: Wladyslaw Figura
+Company: The Software Institute
+Date: November 2021
+git: https://github.com/eb110/JPA_MySQL.git
+ */
+
 package com.JPA.MySQL.component;
 
 import com.JPA.MySQL.model.*;
@@ -9,6 +16,10 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+/*
+Tha data base automatic seed functionality
+ */
 
 @Component
 public class DbInitializer implements CommandLineRunner {

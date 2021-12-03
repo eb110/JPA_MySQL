@@ -1,3 +1,10 @@
+/*
+Author: Wladyslaw Figura
+Company: The Software Institute
+Date: November 2021
+git: https://github.com/eb110/JPA_MySQL.git
+ */
+
 package com.JPA.MySQL.controller;
 
 import com.JPA.MySQL.model.VladFilmActors;
@@ -5,6 +12,10 @@ import com.JPA.MySQL.service.FilmActorsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
+/*
+The films and actors rest API controller
+ */
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
