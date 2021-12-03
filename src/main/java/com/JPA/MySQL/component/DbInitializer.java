@@ -68,7 +68,7 @@ public class DbInitializer implements CommandLineRunner {
     }
 
     private void filmFeedbackSeed() {
-        String[] feedbacks = {"The Godfather is quite simply a masterful piece of film-making",
+        String[] feedbacks = {"The Godfa ther is quite simply a masterful piece of film-making",
                 "Shawshank is enthralling, fantastic, intriguing, truly remarkable!",
                 "The Dark Knight: The Greatest Superhero Film Ever Made",
                 "There's nothing fictional about this movie's high quality.",
