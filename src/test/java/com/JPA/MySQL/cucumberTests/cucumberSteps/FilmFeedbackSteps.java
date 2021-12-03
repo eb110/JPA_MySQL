@@ -37,7 +37,7 @@ public class FilmFeedbackSteps {
     }
     @Then("the film feedback length is bigger then zero")
     public void the_film_feedback_length_is_bigger_then_zero() {
-        Assertions.assertNotEquals(0, feedback.length(), "feedback doesn't exist");
+        Assertions.assertNotEquals(0, feedback.length(), "f eedback doesn't exist");
     }
 
     //##################################################
