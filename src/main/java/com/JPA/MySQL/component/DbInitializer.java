@@ -70,7 +70,7 @@ public class DbInitializer implements CommandLineRunner {
     private void filmFeedbackSeed() {
         String[] feedbacks = {"The Godfa ther is quite simply a masterful piece of film-making",
                 "Shawshank is enthralling, fantastic, intriguing, truly remarkable!",
-                "The Dark Knight: The Greatest Superhero Film Ever Made",
+                "The Dark Knight:  The Greatest Superhero Film Ever Made",
                 "There's nothing fictional about this movie's high quality.",
                 "Possibly the dumbest movie I've seen. Not scary at all."};
         for(int i = 0; i < 5; i++){
