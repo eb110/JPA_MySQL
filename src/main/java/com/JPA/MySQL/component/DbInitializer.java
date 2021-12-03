@@ -72,7 +72,7 @@ public class DbInitializer implements CommandLineRunner {
                 "Shawshank is enthralling, fantastic, intriguing, truly remarkable!",
                 "The Dark Knight:  The Greatest Superhero Film Ever Made",
                 "There's nothing fictional about this movie's high quality.",
-                "Possibly the dumbest movie I've seen. Not scary at all."};
+                "Possibly the dumbe st movie I've seen. Not scary at all."};
         for(int i = 0; i < 5; i++){
             VladFilmFeedback vladFilmFeedback = new VladFilmFeedback();
             vladFilmFeedback.setIdUser(i+1);
